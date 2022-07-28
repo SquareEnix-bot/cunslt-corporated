@@ -1,0 +1,142 @@
+.services {
+     
+  background-color: $dark-color;
+  &__titel {
+    display: flex;
+    align-items: baseline;
+    padding-top: 31px;
+    padding-bottom: 150px;
+  }
+  &__head {
+    position: relative;
+    display: block;
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 58px;
+    /* or 130% */
+
+    letter-spacing: 0.4px;
+    text-transform: capitalize;
+    margin-right: 155px;
+    color: $white-color;
+
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 95px;
+      height: 44px;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='95' height='45' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M28 18.8594h-7v7h7v-7Z' fill='%23D1B06B'/%3E%3Cpath d='M0 27.3594h95M0 17.3594h95M29.5 44.8594v-44M19.5 44.8594v-44' stroke='%23D1B06B'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' transform='translate(0 .8594)' d='M0 0h95v44H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+    }
+  }
+  &__head_description {
+    display: block;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    /* identical to box height, or 160% */
+
+    letter-spacing: 0.4px;
+
+    color: #d7d7d7;
+  }
+  &__list {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__item {
+    background-color: $hero-btn-font;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    width: calc((100% - 6 * 15px) / 3);
+
+    position: relative;
+    padding: 50px;
+  }
+  &__name {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 56px;
+    /* identical to box height, or 160% */
+
+    letter-spacing: 0.4px;
+
+    color: $white-color;
+  }
+  &__description {
+    position: relative;
+
+    display: block;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    /* or 160% */
+    letter-spacing: 0.4px;
+    color: $font-second-color;
+    margin-bottom: 60px;
+  }
+  &__btn {
+    height: 58px;
+    width: 187px;
+    background: $section-bg;
+    border-radius: 0px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    /* identical to box height, or 160% */
+
+    letter-spacing: 0.4px;
+    text-transform: capitalize;
+
+    display: inline-block;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    text-align: center;
+
+    color: $white-color;
+    transition-property: color, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: $time-function;
+    &:hover,
+    &:focus {
+      background-color: $accent-color;
+      color: $section-bg;
+    }
+  }
+  &__description::after {
+    // top: 60px;
+    bottom: -30px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 1px;
+    display: block;
+    content: ' ';
+    position: absolute;
+    // top: 0px;
+    // left: 10%;
+
+    width: 100%;
+    background-color: $header-line-border;
+  }
+}
