@@ -23,7 +23,7 @@
   &::before {
     top: -58px;
     left: 0;
-    @extend %decor;
+    @extend %decor-left;
   }
 }
 
