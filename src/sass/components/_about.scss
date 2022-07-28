@@ -8,6 +8,23 @@
   display: flex;
 }
 
+.about__left {
+  width: 467px;
+  margin-right: 62px;
+}
+
+.about__img {
+  @include side-sizes(413px, 260px);
+
+  &:not(:last-child) {
+    margin-bottom: 20px; // ? тут було 30px
+  }
+}
+
+.about__right {
+  max-width: 825px;
+}
+
 .about__title {
   font-family: $font-serif;
   font-weight: 400;
@@ -57,7 +74,7 @@
 .about__item {
   display: flex;
   align-items: center;
-  padding: 35px 50px;
+  padding: 30px 50px;
   max-width: 315px;
 
   &:nth-child(1) {    

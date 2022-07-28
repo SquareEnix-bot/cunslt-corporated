@@ -1,0 +1,110 @@
+.achievements {
+  padding-top: 124px;
+  padding-bottom: 81px;
+
+  // TODO глянути куди краще повісити бордер
+  // border-bottom: 1px solid $about-desc-font;
+}
+
+.achievements__title {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 95px;
+
+  font-family: $font-serif;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 1.2;
+  text-align: center;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 95px;
+    height: 44px;
+    bottom: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='95' height='44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M0 26.5h95M0 16.5h95M52.5 44V0M42.5 44V0' stroke='%23D1B06B'/%3E%3Cpath d='M51 18h-7v7h7v-7Z' fill='%23D1B06B'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h95v44H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  }
+}
+
+.achievements__desc {
+  max-width: 750px;
+  margin: 0 auto 60px;
+
+  font-size: 20px;
+  line-height: 1.6;  
+  text-align: center;
+  color: $grey-color;
+}
+
+.achievements__list {
+  display: flex;
+  gap: 30px;
+}
+
+.achievements__item {
+  width: 433px;
+  
+  &:nth-child(1) .achievements__icon{
+    @include side-sizes(22px, 20px);
+  }
+
+  &:nth-child(2) .achievements__icon {
+    @include side-sizes(26px, 24px);
+  }
+
+  &:not(:last-child) {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    background-color: $achievements-bg;
+  }
+  
+  &:last-child {
+    padding: 40px 50px;    
+    background-image: url('../images/achievements.jpg');
+  }
+}
+
+.achievements__right-colum {
+  @include side-sizes(120px, 120px);
+  @include flex-center;
+  flex-direction: column;
+  margin-right: 20px;
+  border: 2px solid $accent-color;
+}
+
+.achievements__count {
+  font-size: 30px;
+  line-height: 1.3;
+  
+
+  .achievements__item:not(:last-child) & {
+    text-align: center;
+    color: $about-years-font;       
+  }   
+
+  .achievements__item:last-child & {
+    margin-bottom: 10px;
+
+    color: $white-color;
+  }
+}
+
+.achievements__subtitle {
+  max-width: 200px;
+  font-family: $font-serif;
+  font-size: 26px;
+  line-height: 1.4;
+  color: $dark-color;
+}
+
+.achievements__text {
+  max-width: 150px;
+
+  font-size: 20px;
+  line-height: 1.3;
+  color: $white-color;
+}
