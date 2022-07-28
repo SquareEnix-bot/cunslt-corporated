@@ -43,7 +43,7 @@
 
   &::before {
     top: -87px;
-    @extend %decor;
+    @extend %decor-left;
   }
 }
 
@@ -75,7 +75,7 @@
   display: flex;
   align-items: center;
   padding: 30px 50px;
-  max-width: 315px;
+  width: 350px;
 
   &:nth-child(1) {    
     background-color: $about-item-one-bg;
@@ -98,7 +98,7 @@
 }
 
 .about__success {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.3;
   color: $about-desc-font;
 }
@@ -114,7 +114,7 @@
 }
 
 .about__experience {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.3;
   color: $about-years-font;
 }
