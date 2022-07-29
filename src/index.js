@@ -1,2 +1,1 @@
-import "./js/memberformdata"
-
+import './js/memberformdata';
