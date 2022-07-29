@@ -1,7 +1,6 @@
-
 // * transition
 $time-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+$time: 250ms;
 // * fonts
 $font-sans-serif: 'Montserrat Alternates', sans-serif;
 $font-serif: 'Cormorant Garamond', serif;
@@ -10,14 +9,15 @@ $font-serif: 'Cormorant Garamond', serif;
 $icon-color: #CCAA60;
 
 $white-color: #fff;
-$dark-color: #161D27;
+$dark-color: #161d27;
 $grey-color: #909090;
-$accent-color: #D1B06B;
+$accent-color: #d1b06b;
 
-$section-bg: #161D27;
+$section-bg: #161d27;
 
-$header-line-border: #4E555F;
-$hero-btn-font: #1F2732;
+$header-line-border: #4e555f;
+$hero-btn-font: #1f2732;
+$font-second-color:  #d7d7d7;
 
 $about-desc-font: #D7D7D7;
 $about-item-one-bg: #3B434E;
