@@ -1,1 +1,33 @@
-Services
+<section class="form" id="form">
+  <div class="container">
+    <form class="form__list">
+      <label for="name">Ваше имя</label>
+      <input class="form__input" name="name" id="name" placeholder="Ваше имя *" />
+
+      <label for="tel">Телефон</label>
+        
+      <input class="form__input" type="tel" name="phone_number" id="tel" placeholder="Ваш телефон *" />
+
+      <label for="service">Услуга</label>
+      <select class="form__input" id="service" name="service_name" placeholder="Ваш телефон">
+        <option class="form__option" value="ВНЖ">Выберете направление</option>
+        <option class="form__option" value="ВНЖ">ВНЖ</option>
+        <option class="form__option" value="ПМЖ">ПМЖ</option>
+        <option class="form__option" value="Гражданство">Гражданство</option>
+        <option class="form__option" value="Регистрация фирмы">Регистрация фирмы</option>
+        <option class="form__option" value="Бухгалтерские услуги">Бухгалтерские услуги</option>
+        <option class="form__option" value="Составление договоров">Составление договоров</option>
+      </select>
+      <label for="comment">Комментарий</label>
+
+      <textarea
+        class="form__input form__comment"
+        id="comment"
+        name="comment"
+        rows="5"
+        placeholder="Напишите что то ..."
+      ></textarea>
+      <button class="form__btn" type="submit">Заказать консультацию</button>
+    </form>
+  </div>
+</section>
