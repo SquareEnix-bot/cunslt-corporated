@@ -14,6 +14,60 @@
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='95' height='44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M0 26.5h95M0 16.5h95M52.5 44V0M42.5 44V0' stroke='%23D1B06B'/%3E%3Cpath d='M51 18h-7v7h7v-7Z' fill='%23D1B06B'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h95v44H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
 }
 
+%yellov-btn {
+  font-size: 22px;
+  line-height: 1.6;
+  color: $hero-btn-font;
+
+  display: inline-block;
+  
+  background-color: $accent-color;
+
+  &:hover span::after,
+  &:focus span::after {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+%slide-in {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: $hero-btn-font;
+    opacity: 1;
+    transition: transform $time-function;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+%fade-in {
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $white-color;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+  }
+}
+
  %trans{ 
   transition-duration: $time;
   transition-timing-function: $time-function;
@@ -41,3 +95,4 @@
     fill:$white-color;
   }
 }
+

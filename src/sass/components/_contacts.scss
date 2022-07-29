@@ -1,0 +1,106 @@
+.contacts {
+  background-color: $section-bg;
+  padding: 150px 0;
+}
+
+.contacts__wrapper {
+  display: flex;
+}
+
+.contacts__left {
+  flex-basis: 630px;
+}
+
+.contacts__title {
+  position: relative;
+  margin-bottom: 96px;
+  color: $white-color;
+
+  &::after {
+    bottom: -53px;
+    left: 0;
+    @extend %decor-left;
+  }
+}
+
+.contacts__desc {
+  margin-bottom: 69px;  
+  color: $white-color;
+}
+
+.contacts__btn {
+  @extend %yellov-btn;
+
+  padding: 25px 71px 15px;
+
+  span {
+    @extend %slide-in;
+  }
+}
+
+.contacts__right {
+  flex-basis: 630px;
+  margin-left: auto;
+  padding: 40px;
+  background-color: $white-color;
+}
+
+.contacts__right-wrapper {
+  padding: 55px 35px;
+  border: 15px solid $about-desc-font;
+}
+
+.contacts__subtitle {
+  margin-bottom: 12px;
+  font-family: $font-serif;  
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 1.3;
+  color: $call-font-color;
+}
+
+.contacts__desc {
+  .contacts__right & {
+    margin-bottom: 25px;
+    color: $grey-color;
+  }
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+}
+
+.phone__icon {
+  @include side-sizes(70px, 70px);
+  @include flex-center;
+  margin-right: 15px;
+  background-color: $accent-color;
+}
+
+.phone__svg {
+  @include side-sizes(27px, 27px);  
+  color: $white-color;  
+}
+
+.phone__link {
+  position: relative;
+  
+  @extend %fade-in;
+
+  &::after {
+    background-color: $call-font-color;
+  }
+}
+
+.phone__subtitle {  
+  font-size: 18px;
+  line-height: 1.2;
+  color: $call-font-color;
+}
+
+.phone__number {
+  font-size: 30px;
+  line-height: 1.4;
+  color: $call-font-color;  
+}

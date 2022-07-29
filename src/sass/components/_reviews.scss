@@ -6,11 +6,7 @@
 .reviews__title {
   position: relative;
   margin-bottom: 115px;
-
-  font-family: $font-serif;
-  font-weight: 400;
-  font-size: 45px;
-  line-height: 1.2;   
+  
   text-align: center;  
   color: $white-color;
 
@@ -55,9 +51,7 @@
 .reviews__desc {  
   height: calc(100% - 84px);
   position: relative;
-
-  font-size: 20px;
-  line-height: 1.6;
+  
   color: $white-color;
 
   padding: 110px 40px 50px;
