@@ -14,14 +14,9 @@
   }
 
   &__soclink-titel {
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 400;
+    font-family: $font-sans-serif;
     font-size: 20px;
-    line-height: 32px;
-    /* identical to box height, or 160% */
-
-    letter-spacing: 0.4px;
+    line-height: 1.6;
     margin-left: auto;
     margin-right: 20px;
     color: $accent-color;
@@ -35,14 +30,9 @@
   }
   &__cops {
     display: inline-block;
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 400;
+    font-family: $font-sans-serif;
     font-size: 20px;
-    line-height: 32px;
-    /* identical to box height, or 160% */
-
-    letter-spacing: 0.4px;
+    line-height: 1.6;
 
     color: $font-second-color;
   }

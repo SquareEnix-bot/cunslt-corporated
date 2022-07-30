@@ -10,14 +10,10 @@
   &__head {
     position: relative;
     display: block;
-    font-family: 'Cormorant Garamond';
-    font-style: normal;
+    font-family: $font-serif;
     font-weight: 400;
     font-size: 45px;
-    line-height: 58px;
-    /* or 130% */
-
-    letter-spacing: 0.4px;
+    line-height: 1.3;
     text-transform: capitalize;
     margin-right: 155px;
     color: $white-color;
@@ -35,15 +31,9 @@
   }
   &__head_description {
     display: block;
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 400;
+    font-family: $font-sans-serif;
     font-size: 20px;
-    line-height: 32px;
-    /* identical to box height, or 160% */
-
-    letter-spacing: 0.4px;
-
+    line-height: 1.6;
     color: #d7d7d7;
   }
   &__list {
@@ -64,14 +54,9 @@
     padding: 50px;
   }
   &__name {
-    font-family: 'Cormorant Garamond';
-    font-style: normal;
-    font-weight: 400;
+    font-family: $font-serif;
     font-size: 35px;
-    line-height: 56px;
-    /* identical to box height, or 160% */
-
-    letter-spacing: 0.4px;
+    line-height: 1.6;
 
     color: $white-color;
   }
@@ -79,13 +64,9 @@
     position: relative;
 
     display: block;
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 400;
+    font-family: $font-sans-serif;
     font-size: 20px;
-    line-height: 32px;
-    /* or 160% */
-    letter-spacing: 0.4px;
+    line-height: 1.6;
     color: $font-second-color;
     margin-bottom: 60px;
   }
@@ -98,14 +79,9 @@
     margin-left: auto;
     margin-bottom: 20px;
 
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 400;
+    font-family: $font-sans-serif;
     font-size: 20px;
-    line-height: 32px;
-    /* identical to box height, or 160% */
-
-    letter-spacing: 0.4px;
+    line-height: 1.6;
     text-transform: capitalize;
 
     display: inline-block;
