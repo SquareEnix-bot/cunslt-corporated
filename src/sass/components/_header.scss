@@ -1,6 +1,9 @@
-.header {  
-  position: relative;  
-
+.header {
+  position: relative;
+  &__logIMG {
+    display: block;
+    width: 120px;
+  }
   &::after {
     content: '';
     position: absolute;
@@ -8,11 +11,16 @@
     height: 1023px;
     top: 0;
     z-index: -1;
-    background-image: linear-gradient(90deg, rgba(31, 39, 50, 0.81) 0%, rgba(31, 39, 50, 0.81) 100%), url('../images/hero-bg.jpg');
+    background-image: linear-gradient(
+        90deg,
+        rgba(31, 39, 50, 0.81) 0%,
+        rgba(31, 39, 50, 0.81) 100%
+      ),
+      url('../images/hero-bg.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-color: $section-bg;
-  }  
+  }
 }
 
 .header__line {
@@ -21,9 +29,9 @@
   &:nth-child(1) {
     padding-top: 40px;
     padding-bottom: 30px;
-    margin-bottom: 10px;    
+    margin-bottom: 10px;
   }
-  
+
   &:nth-child(2) {
     border-top: 1px solid $header-line-border;
     border-bottom: 1px solid $header-line-border;
@@ -35,12 +43,12 @@
   font-weight: 700;
   font-size: 60px;
   line-height: 1.2;
-  color: $white-color;    
+  color: $white-color;
 }
 
 .header__btn {
   font-size: 22px;
-  line-height: 1.6;  
+  line-height: 1.6;
   color: $white-color;
 
   margin-left: auto;
@@ -54,7 +62,7 @@
   &:focus {
     color: $accent-color;
     border-color: $accent-color;
-  }  
+  }
   // TODO анімацію якусь на кнопку
 }
 
@@ -77,7 +85,7 @@
   &:hover,
   &:focus {
     color: $accent-color;
-  }      
+  }
 }
 
 // ! поки так бо з секцією контакти однакові класи
@@ -92,7 +100,7 @@
 }
 
 .h-contacts__item {
-  display: flex;  
+  display: flex;
   align-items: center;
 }
 
@@ -106,15 +114,15 @@
 }
 
 .h-contacts__phone {
-  @include side-sizes(17px, 17px)
+  @include side-sizes(17px, 17px);
 }
 
 .h-contacts__mail {
-  @include side-sizes(18px, 16px)
+  @include side-sizes(18px, 16px);
 }
 
 .h-contacts__link {
-  position: relative;  
+  position: relative;
 
   @extend %fade-in;
 }
@@ -122,12 +130,12 @@
 .h-contacts__subtitle {
   margin-bottom: 1px;
   font-size: 18px;
-  line-height: 1.6;  
+  line-height: 1.6;
   color: $accent-color;
 }
 
 .h-contacts__text {
   font-size: 20px;
   line-height: 1.2;
-  color: $white-color;  
+  color: $white-color;
 }
