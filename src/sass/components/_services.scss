@@ -1,4 +1,5 @@
 .services {
+  padding-bottom: 150px;
      
   background-color: $dark-color;
   &__titel {
@@ -115,4 +116,5 @@
     width: 100%;
     background-color: $header-line-border;
   }
+
 }

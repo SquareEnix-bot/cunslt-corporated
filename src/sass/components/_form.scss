@@ -40,7 +40,10 @@
 }
 
 .form {
+  background-size:  cover;
+  
   background-image: url(/src/images/form/background_@1x.jpg);
+  background-repeat: no-repeat ;
 
   padding: 140px 40px;
   &__list {
