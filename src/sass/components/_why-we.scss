@@ -56,6 +56,8 @@
     position: relative;
   }
   &__item {
+    
+    z-index: 1;
     display: flex;
     flex-direction: column;
 
@@ -64,8 +66,10 @@
     padding: 20px 60px 90px 60px;
 
     &:first-child {
+        
       margin-right: auto;
       &::after {
+        z-index: 0;
         content: '';
         background-size: cover;
         background-image: url(/src/images/why-we/ul_bcg_@1x.jpg);
@@ -86,6 +90,8 @@
     }
   }
   &__titel {
+    z-index: 1;
+
     margin-bottom: 32px;
     font-style: normal;
     font-weight: 400;
@@ -101,6 +107,8 @@
     flex-direction: row;
   }
   &__description {
+    z-index: 1;
+
     display: block;
     font-style: normal;
     font-weight: 400;
@@ -158,33 +166,32 @@
       top: calc(100% + 1px);
       width: 100%;
       height: 5px;
-    //   background-color: $accent-color;
-    
+      //   background-color: $accent-color;
     }
-      &:nth-child(1)::after {
-        background-image: linear-gradient(
-          to right,
-          $accent-color 80%,
-          $white-color 80%,
-          $white-color 100%
-        );
-      }
-      &:nth-child(2)::after {
-        background-image: linear-gradient(
-          to right,
-          $accent-color 75%,
-          $white-color 75%,
-          $white-color 100%
-        );
-      }
-      &:nth-child(3)::after {
-        background-image: linear-gradient(
-          to right,
-          $accent-color 90%,
-          $white-color 90%,
-          $white-color 100%
-        );
-      }
+    &:nth-child(1)::after {
+      background-image: linear-gradient(
+        to right,
+        $accent-color 80%,
+        $white-color 80%,
+        $white-color 100%
+      );
+    }
+    &:nth-child(2)::after {
+      background-image: linear-gradient(
+        to right,
+        $accent-color 75%,
+        $white-color 75%,
+        $white-color 100%
+      );
+    }
+    &:nth-child(3)::after {
+      background-image: linear-gradient(
+        to right,
+        $accent-color 90%,
+        $white-color 90%,
+        $white-color 100%
+      );
+    }
   }
 
   &__btn {
@@ -193,7 +200,7 @@
     @extend %yellov-btn;
     margin-top: 65px;
     padding: 15px 30px 5px;
-    text-align:  center;
+    text-align: center;
     span {
       @extend %slide-in;
     }
