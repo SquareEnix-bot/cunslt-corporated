@@ -1,0 +1,179 @@
+.header {
+  position: relative;
+
+  @include mq(mobile-only) {
+    background-color: $section-bg;
+  }  
+}
+
+.header__line {
+  &:nth-child(1) {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &:nth-child(2) {
+    display: none;
+  }
+}
+
+.mobile {
+  @include mq(small-mobile) {
+    height: calc(100vh - 108px);
+  }
+
+  @include mq(mobile) {
+    height: calc(100vh - 130px);
+  }
+
+  @include mq(mobile-only) {
+    position: absolute;    
+    left: 0;         
+    width: 100vw;
+    padding: 15px;    
+    background-color: $section-bg;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    transition: $time-function;
+
+    z-index: 1;
+
+    &--active {
+      @include mq(small-mobile) {
+        top: 107px;
+      }
+
+      @include mq(mobile) {
+        top: 129px;
+      }
+
+      visibility: visible;
+      opacity: 1;
+      pointer-events: initial;      
+    }
+  }
+
+  @include mq(tablet) {
+    display: none;
+  }
+}
+
+.header__logo {
+  display: block;
+
+  @include mq(small-mobile) {
+    width: 200px;
+  }
+
+  @include mq(mobile) {
+    width: 250px;
+  }
+}
+
+.burger {
+  margin-left: auto;
+  color: $white-color;
+  transform: color $time-function;    
+
+  @include mq(tablet) {
+    display: none;
+  }
+}
+
+.burger__icon {
+  @include side-sizes(40px, 40px);
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.burger__icon-open {
+  visibility: visible;
+  opacity: 1;
+
+  .burger.burger--active & {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.burger__icon-close {
+  .burger.burger--active & {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .burger & {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.header__btn {
+  display: none;
+}
+
+.nav__list {
+  @include mq(mobile-only) {
+    margin-bottom: 50px;
+  }  
+}
+
+.nav__link {
+  font-size: 32px;  
+  line-height: 1.6;
+  color: $white-color;
+  transition: color $time-function;
+
+  display: inline-block; 
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.h-contacts__icon {
+  @include side-sizes(20px, 20px);
+  @include flex-center;
+  margin-right: 12px;
+  color: $icon-color;
+}
+
+.h-contacts__phone {
+  @include side-sizes(17px, 17px)
+}
+
+.h-contacts__mail {
+  @include side-sizes(18px, 16px)
+}
+
+.h-contacts__item {
+  display: flex;
+  align-items: center;
+}
+
+.h-contacts__subtitle {
+  margin-bottom: 1px;
+  font-size: 20px;
+  line-height: 1.6;
+  color: $accent-color;
+
+  @include mq(mobile) {
+    font-size: 18px;
+  }
+}
+
+.h-contacts__text {
+  font-size: 16px;
+  line-height: 1.2;
+  color: $white-color;
+
+  @include mq(mobile) {
+    font-size: 20px;
+  }
+}

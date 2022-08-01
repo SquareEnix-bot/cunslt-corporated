@@ -1,100 +1,103 @@
-.header {  
-  position: relative;  
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 1023px;
-    top: 0;
-    z-index: -1;
-    background-image: linear-gradient(90deg, rgba(31, 39, 50, 0.81) 0%, rgba(31, 39, 50, 0.81) 100%), url('../images/hero-bg.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: $section-bg;
-  }  
-}
-
 .header__line {
-  display: flex;
-
-  &:nth-child(1) {
-    padding-top: 40px;
-    padding-bottom: 30px;
-    margin-bottom: 10px;    
+  @include mq(tablet) {
+    &:nth-child(1) {
+      display: flex;
+      align-items: center;
+      padding-top: 20px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      
+      @include mq(desktop) {
+        padding-top: 30px;
+        padding-bottom: 15px;
+      }
+    }
+    
+    &:nth-child(2) {
+      display: block;
+      padding-bottom: 10px;
+      border-top: 1px solid $header-line-border;
+      border-bottom: 1px solid $header-line-border;
+    }
   }
-  
-  &:nth-child(2) {
-    border-top: 1px solid $header-line-border;
-    border-bottom: 1px solid $header-line-border;
+    
+    @include mq(desktop) {
+      &:nth-child(2) {
+        display: flex;
+      }
+    }
   }
-}
-
-.logo__title {
-  font-family: $font-serif;
-  font-weight: 700;
-  font-size: 60px;
-  line-height: 1.2;
-  color: $white-color;    
-}
 
 .header__btn {
-  font-size: 22px;
-  line-height: 1.6;  
-  color: $white-color;
+  @include mq(tablet) {
+    display: block;
+    font-size: 20px;
+    line-height: 1.6;
+    color: $white-color;
+      
+    margin-left: auto;
+    padding: 24px 71px;
+      
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: color $time-function, border-color $time-function;
+      
+    &:hover,
+    &:focus {
+      color: $accent-color;
+      border-color: $accent-color;
+    }
+  }    
 
-  margin-left: auto;
-  padding: 24px 71px;
-
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: color $time-function, border-color $time-function;
-
-  &:hover,
-  &:focus {
-    color: $accent-color;
-    border-color: $accent-color;
-  }  
-  // TODO анімацію якусь на кнопку
+  @include mq(desktop) {
+    font-size: 22px;
+  }
 }
 
 .nav__list {
-  display: flex;
-  gap: 47px;
+  @include mq(tablet) {
+    display: flex;
+    justify-content: space-around;
+  }    
+
+  @include mq(desktop) {
+    gap: 45px;
+  }
 }
 
 .nav__link {
-  font-size: 22px;
-  line-height: 1.6;
-  color: $white-color;
-  transition: color $time-function;
+  @include mq(tablet) {
+    font-size: 22px;
+      
+      display: inline-block;
+      
+      padding-top: 10px;
+      padding-bottom: 20px;
+  }    
 
-  display: inline-block;
-
-  padding-top: 45px;
-  padding-bottom: 48px;
-
-  &:hover,
-  &:focus {
-    color: $accent-color;
-  }      
+  @include mq(desktop) {
+    padding-top: 45px;
+    padding-bottom: 48px;
+  }    
 }
-
-// ! поки так бо з секцією контакти однакові класи
 
 .h-contacts {
-  display: flex;
-  gap: 50px;
-}
-
-.header__contacts {
-  margin-left: auto;
+  @include mq(tablet) {
+    display: flex;
+    justify-content: space-around;
+  }
+    
+  @include mq(desktop) {
+    margin-left: auto;
+    gap: 50px;
+  }    
 }
 
 .h-contacts__item {
-  display: flex;  
-  align-items: center;
-}
+  @include mq(tablet-only) {
+      margin-bottom: 10px;
+    }
+} 
 
 .h-contacts__icon {
   @include side-sizes(62px, 62px);
@@ -105,29 +108,8 @@
   border-radius: 50%;
 }
 
-.h-contacts__phone {
-  @include side-sizes(17px, 17px)
-}
-
-.h-contacts__mail {
-  @include side-sizes(18px, 16px)
-}
 
 .h-contacts__link {
-  position: relative;  
-
+  position: relative;
   @extend %fade-in;
-}
-
-.h-contacts__subtitle {
-  margin-bottom: 1px;
-  font-size: 18px;
-  line-height: 1.6;  
-  color: $accent-color;
-}
-
-.h-contacts__text {
-  font-size: 20px;
-  line-height: 1.2;
-  color: $white-color;  
 }
