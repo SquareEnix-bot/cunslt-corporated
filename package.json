@@ -5,7 +5,9 @@
   "homepage": "https://SquareEnix-bot.github.io/cunslt-corporated",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /cunslt-corporated/"
+    "build": "parcel build src/*.html --public-url /cunslt-corporated/",
+    "deploy": "parcel build src/*.html --public-url ./"
+
   },
   "repository": {
     "type": "git",

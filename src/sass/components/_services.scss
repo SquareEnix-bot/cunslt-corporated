@@ -1,40 +1,27 @@
 .services {
-     
+  padding-bottom: 150px;
   background-color: $dark-color;
+
   &__titel {
     display: flex;
     align-items: baseline;
     padding-top: 31px;
     padding-bottom: 150px;
-  }
-  &__head {
-    position: relative;
-    display: block;
-    font-family: $font-serif;
-    font-weight: 400;
-    font-size: 45px;
-    line-height: 1.3;
-    text-transform: capitalize;
-    margin-right: 155px;
-    color: $white-color;
+    @include flex-center();
+    flex-direction: column;
 
-    &::after {
-      display: block;
-      content: '';
-      position: absolute;
-      top: 80px;
-      left: 0;
-      width: 95px;
-      height: 44px;
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='95' height='45' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M28 18.8594h-7v7h7v-7Z' fill='%23D1B06B'/%3E%3Cpath d='M0 27.3594h95M0 17.3594h95M29.5 44.8594v-44M19.5 44.8594v-44' stroke='%23D1B06B'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' transform='translate(0 .8594)' d='M0 0h95v44H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+    @include mq(tablet) {
+      @include flex-center();
+    }
+    @include mq(desktop) {
+      flex-direction: row;
     }
   }
+  &__head {
+    @extend %head-titel;
+  }
   &__head_description {
-    display: block;
-    font-family: $font-sans-serif;
-    font-size: 20px;
-    line-height: 1.6;
-    color: #d7d7d7;
+    @extend %head-description;
   }
   &__list {
     width: 100%;
@@ -47,11 +34,16 @@
     background-color: $hero-btn-font;
     display: flex;
     flex-direction: column;
-    width: 30%;
-    width: calc((100% - 6 * 15px) / 3);
-
+    width: calc((100% - 2 * 15px) / 1);
     position: relative;
     padding: 50px;
+
+    @include mq(tablet) {
+      width: calc((100% - 4 * 15px) / 2);
+    }
+    @include mq(desktop) {
+      width: calc((100% - 6 * 15px) / 3);
+    }
   }
   &__name {
     font-family: $font-serif;
@@ -78,7 +70,6 @@
     margin-top: auto;
     margin-left: auto;
     margin-bottom: 20px;
-
     font-family: $font-sans-serif;
     font-size: 20px;
     line-height: 1.6;

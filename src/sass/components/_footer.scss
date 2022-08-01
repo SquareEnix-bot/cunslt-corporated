@@ -1,9 +1,9 @@
 .footer {
+  min-width: 480px;
   background-color: $section-bg;
   // padding-top: 50px;
   padding-bottom: 30px;
   padding-top: 30px;
-
 
   &__container {
     display: flex;
@@ -18,19 +18,40 @@
     font-size: 20px;
     line-height: 1.6;
     margin-left: auto;
-    margin-right: 20px;
+    margin-right: auto;
     color: $accent-color;
+    display: none;
+
+    @include mq(tablet) {
+      display: block;
+      margin-left: auto;
+      margin-right: 20px;
+    }
+    @include mq(desktop) {
+    }
   }
   &__cops-soclink {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
+    @include flex-center();
+
+    flex-direction: column-reverse;
+    // align-items: baseline;
     position: relative;
     margin-top: 50px;
+
+    @include mq(tablet) {
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      position: relative;
+      margin-top: 50px;
+    }
+    @include mq(desktop) {
+    }
   }
   &__cops {
     display: inline-block;
-    font-family: $font-sans-serif;
+    // font-family: $font-sans-serif;
     font-size: 20px;
     line-height: 1.6;
 
@@ -43,24 +64,42 @@
   &__logo {
     position: relative;
     &::after {
-      content: ' ';
+      content: '';
       position: absolute;
       display: block;
-      width: 520px;
-      height: 80px;
+
+      overflow: hidden;
+
+      width: 95px;
+      height: 44px;
+      transform: translatey(50%);
       top: 0;
       left: 100%;
-      background-image: url(../images/footer-icon-right.svg);
+      background-image: url(../images/footer-icon-right-mini.svg);
+
+      @include mq(desktop) {
+        width: 520px;
+        height: 80px;
+        transform: translatey(0);
+        background-image: url(../images/footer-icon-right.svg);
+      }
     }
-     &::before {
-      content: ' ';
+    &::before {
+      content: '';
       position: absolute;
       display: block;
-      width: 520px;
-      height: 80px;
+      width: 95px;
+      height: 44px;
+      transform: translatey(50%);
       top: 0;
       right: 100%;
-      background-image: url(../images/footer-icon-left.svg);
+      background-image: url(../images/footer-icon-left-mini.svg);
+      @include mq(desktop) {
+        width: 520px;
+        height: 80px;
+        transform: translatey(0);
+        background-image: url(../images/footer-icon-left.svg);
+      }
     }
   }
 }
@@ -68,6 +107,8 @@
 .footer-soclink {
   margin-right: 0;
   margin-top: 16px;
+  margin-bottom: 16px;
+
   @include flex-center();
 
   &__item:not(:last-child) {

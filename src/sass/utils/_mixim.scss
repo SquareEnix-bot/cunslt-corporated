@@ -1,5 +1,9 @@
 // просто flex який центрує нащадків всередині батьківського елементу
-@mixin flex-center($display: flex, $align-items: center, $justify-content: center) {
+@mixin flex-center(
+  $display: flex,
+  $align-items: center,
+  $justify-content: center
+) {
   display: $display;
   align-items: $align-items;
   justify-content: $justify-content;
@@ -24,7 +28,7 @@
 }
 
 // просто щоб прописувати ширину і висоту
-@mixin side-sizes ($width, $height) {
+@mixin side-sizes($width, $height) {
   width: $width;
   height: $height;
 }
@@ -34,68 +38,53 @@
   $mobile-start: 320px;
   $mobile: 480px;
   $tablet: 768px;
-  $desktop: 1170px;
+  $desktop: 1440px;
 
   // TODO допрацювати для мобілки 320 пікселів
 
   @if $screen==small-mobile {
-      @media screen and (max-width: $mobile) {
-        @content;
-      }
+    @media screen and (max-width: $mobile) {
+      @content;
     }
-
-  @else if $screen==mobile-only {
+  } @else if $screen==mobile-only {
     @media screen and (max-width: #{$tablet - 0.02}) {
       @content;
     }
-  }
-
-  @else if $screen==mobile {
+  } @else if $screen==mobile {
     @media screen and (min-width: $mobile) {
       @content;
     }
-  }
-
-  @else if $screen==tablet-only {
+  } @else if $screen==tablet-only {
     @media screen and (min-width: $tablet) and (max-width: #{$desktop - 0.02}) {
       @content;
     }
-  }
-
-  @else if $screen==tablet {
+  } @else if $screen==tablet {
     @media screen and (min-width: $tablet) {
       @content;
     }
-  }
-
-  @else if $screen==desktop {
+  } @else if $screen==desktop {
     @media screen and (min-width: $desktop) {
       @content;
     }
-  }
-
-  @else if $screen==notDesktop {
+  } @else if $screen==notDesktop {
     @media screen and (max-width: #{$desktop - 0.02}) {
       @content;
     }
-  }
-
-  @else if $screen==retina {
-
+  } @else if $screen==retina {
     @media screen and (min-device-pixel-ratio: 2),
-    screen and (-moz-min-device-pixel-ratio: 2),
-    screen and (-o-min-device-pixel-ratio: 2/1),
-    screen and (-webkit-min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
+      screen and (-moz-min-device-pixel-ratio: 2),
+      screen and (-o-min-device-pixel-ratio: 2/1),
+      screen and (-webkit-min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
       @content;
     }
-  }  
+  }
 }
 
 // exemple using      @include bgimg('../images/advantages/s/icon_2', 'png');
 
-@mixin bgimg($filelink, $type) {  
+@mixin bgimg($filelink, $type) {
   background-image: url($filelink + '.' + $type);
   background-image: url($filelink + '.webp'); // !костиль
 
@@ -107,7 +96,7 @@
   // background-image: -webkit-image-set(url($filelink + '.webp') type("image/webp") 1x, url($filelink + '@2x.webp') type("image/webp") 2x, url($filelink + '.' + $type) type("image/png") 1x, url($filelink + '@2x.' + $type) type("image/png") 2x);
 
   @include mq(retina) {
-    background-image: url($filelink + '@2x.' + $type);    
+    background-image: url($filelink + '@2x.' + $type);
     background-image: -webkit-image-set(url($filelink + '@2x.webp') 2x);
     background-image: image-set(url($filelink + '@2x.webp') 2x);
   }
