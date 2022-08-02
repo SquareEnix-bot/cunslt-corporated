@@ -36,6 +36,10 @@
     left: 0;
     @extend %decor-left;
   }
+
+  @include mq(tablet-only) {
+    font-size: 35px;
+  }
 }
 
 .contacts__desc {
@@ -52,7 +56,7 @@
 
   padding: 25px 31px 15px;
 
-  @include mq(tablet) {
+  @include mq(desktop) {
     padding: 25px 71px 15px;
   }
 
@@ -151,7 +155,7 @@
   line-height: 1.4;
   color: $call-font-color;
 
-  @include mq(tablet) {
+  @include mq(desktop) {
     font-size: 30px;
   }
 }

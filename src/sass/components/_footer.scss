@@ -1,16 +1,12 @@
-.footer {
-  min-width: 480px;
-  background-color: $section-bg;
-  // padding-top: 50px;
-  padding-bottom: 30px;
-  padding-top: 30px;
+.footer {  
+  background-color: $section-bg;  
+  padding: 50px 0;
 
   &__container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    padding-top: 20px;
+    align-items: center;    
   }
 
   &__soclink-titel {
@@ -31,20 +27,19 @@
     }
   }
   &__cops-soclink {
-    @include flex-center();
+    @include flex-center;
 
     flex-direction: column-reverse;
     // align-items: baseline;
-    position: relative;
-    margin-top: 50px;
+    position: relative;      
 
-    @include mq(tablet) {
-      margin-bottom: 0;
+    border-top: 1px solid $about-item-one-bg;
+    border-bottom: 1px solid $about-item-one-bg;
+
+    @include mq(tablet) {      
       display: flex;
       flex-direction: row;
-      align-items: baseline;
-      position: relative;
-      margin-top: 50px;
+      align-items: baseline;            
     }
     @include mq(desktop) {
     }
@@ -63,42 +58,42 @@
   }
   &__logo {
     position: relative;
-    &::after {
-      content: '';
-      position: absolute;
-      display: block;
 
-      overflow: hidden;
+    @include mq(mobile) {  
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        @include side-sizes(95px, 44px);
 
-      width: 95px;
-      height: 44px;
-      transform: translatey(50%);
-      top: 0;
-      left: 100%;
-      background-image: url(../images/footer-icon-right-mini.svg);
-
-      @include mq(desktop) {
-        width: 520px;
-        height: 80px;
-        transform: translatey(0);
-        background-image: url(../images/footer-icon-right.svg);
+        @include mq(desktop) {
+          @include side-sizes(520px, 80px);
+        }
       }
-    }
-    &::before {
-      content: '';
-      position: absolute;
-      display: block;
-      width: 95px;
-      height: 44px;
-      transform: translatey(50%);
-      top: 0;
-      right: 100%;
-      background-image: url(../images/footer-icon-left-mini.svg);
-      @include mq(desktop) {
-        width: 520px;
-        height: 80px;
-        transform: translatey(0);
-        background-image: url(../images/footer-icon-left.svg);
+
+      &::after {        
+        transform: translatey(50%);
+        top: 0;
+        left: 100%;
+        background-image: url(../images/footer-icon-right-mini.svg);
+
+        @include mq(desktop) {          
+          transform: translatey(0);
+          background-image: url(../images/footer-icon-right.svg);
+        }
+      }
+
+      &::before {        
+        transform: translatey(50%);
+        top: 0;
+        right: 100%;
+        background-image: url(../images/footer-icon-left-mini.svg);
+
+        @include mq(desktop) {          
+          transform: translatey(0);
+          background-image: url(../images/footer-icon-left.svg);
+        }
       }
     }
   }
@@ -124,4 +119,66 @@
     @extend %sosial-icon;
     fill: $white-color;
   }
+}
+
+.footer__list {
+  display: none;
+  padding: 25px 0;
+
+  @include mq(tablet) {
+    display: grid;
+    grid-template-columns: repeat(2, 360px);    
+    gap: 10px;    
+    justify-content: center;
+  }
+
+  @include mq(desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}  
+
+.footer__item {
+  display: flex;
+  align-items: center;
+}
+
+.footer__icon {
+  @include mq(mobile) {
+    @include side-sizes(40px, 40px);
+    @include flex-center;
+    margin-right: 10px;
+    color: $icon-color;
+    border: 2px solid $accent-color;
+    border-radius: 50%;
+  }
+}
+
+.footer__phone {
+  @include side-sizes(17px, 17px);
+}
+
+.footer__mail {
+  @include side-sizes(18px, 16px);
+}
+
+.footer__clock {
+  @include side-sizes(18px, 18px);
+}
+
+.footer__link {
+  position: relative;
+  @extend %fade-in;
+}
+
+.footer__subtitle {
+  margin-bottom: 1px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: $accent-color;
+}
+
+.footer__text {
+  font-size: 18px;
+  line-height: 1.2;
+  color: $white-color;  
 }
