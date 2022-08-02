@@ -28,9 +28,7 @@
   }
   &__cops-soclink {
     @include flex-center;
-
-    flex-direction: column-reverse;
-    // align-items: baseline;
+    flex-direction: column-reverse;    
     position: relative;      
 
     border-top: 1px solid $about-item-one-bg;
@@ -46,12 +44,15 @@
   }
   &__cops {
     display: inline-block;
-    // font-family: $font-sans-serif;
+    font-family: $font-sans-serif;
     font-size: 20px;
-    line-height: 1.6;
-
     color: $font-second-color;
+
+    @include mq(mobile-only) {
+      text-align: center;
+    }
   }
+
   &__logIMG {
     display: block;
     width: 180px;

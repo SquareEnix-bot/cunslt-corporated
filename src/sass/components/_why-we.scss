@@ -1,187 +1,149 @@
-.why-we {
-  min-width: $min-width-var;
-  background-size: cover;
-  background-image: url(/src/images/why-we/why-we-bcg@1x.jpg);
-  background-repeat: no-repeat;
-  padding: 50px 1px;
-
-  & .why-we__headtitel {
-    position: relative;
-    padding-left: 5px;
-    padding-right: 5px;
-    align-items: baseline;
-    padding-top: 31px;
-    background: rgba(31, 39, 50, 0.85);
-    padding-bottom: 80px;
-    @include flex-center();
-    flex-direction: column;
-
-    @include mq(tablet) {
-      @include flex-center();
-    }
-    @include mq(desktop) {
-      flex-direction: row;
-    }
+.why-we {  
+  background-image: url('../images/why-we/why-we-bcg@1x.jpg');
+  @include mq(retina) {
+    background-image: url('../images/why-we/why-we-bcg@2x.jpg');
   }
-  & .why-we__head {
-    @extend %head-titel;
-  }
-  & .why-we__head_description {
-    @extend %head-description;
+  background-size: cover;  
+  background-repeat: no-repeat; 
+}
+
+.why-we__list {  
+  position: relative;
+  padding: 20px;
+  background: rgba(31, 39, 50, 0.85);
+  background: linear-gradient(90deg, rgba(31, 39, 50, 0.85) 0%, rgba(31, 39, 50, 0.85) 100%); 
+
+  @include mq(tablet) {
+    display: flex;    
+    gap: 20px;
   }
 
-  &__list {
-    background: rgba(31, 39, 50, 0.85);
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    @include flex-center();
-
-    @include mq(tablet) {
-      @include flex-center();
-
-      flex-direction: column;
-    }
-    @include mq(desktop) {
-      flex-direction: row;
-      justify-content: unset;
-      align-items: unset;
-    }
+  @include mq(desktop) {
+    padding: 80px 60px;
+    gap: 364px;
   }
-  &__item {
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-   min-width: $min-width-var;
-    padding: 20px 50px 90px 50px;
-    margin-right: auto;
-    margin-left: auto;
+}
 
-    @include mq(tablet) {
-      // width: 70%;
+.why-we__item {
+  &:nth-child(1) {
+    @include mq(mobile-only) {
+      margin-bottom: 30px;
     }
-    @include mq(desktop) {
-      // flex-direction: row;
-      text-align: left;
-      margin: 0;
-      width: 500px;
-      padding: 20px 60px 90px;
-    }
+  } 
 
-    &:first-child {
-      margin-right: auto;
-      &::after {
-        @include mq(desktop) {
-          z-index: 0;
-          content: '';
-          background-size: cover;
-          background-image: url(/src/images/why-we/ul_bcg_@1x.jpg);
-          background-repeat: no-repeat;
-          display: block;
-          width: 264px;
-          height: 900px;
-          position: absolute;
-          // top: 0;
-          top: calc((100% - 900px) / 2);
-          left: calc(100% / 2);
+  @include mq(tablet) {
+    flex-basis: 50%;
+  }
+  
+  &:first-child {
+    &::after {
+      @include mq(desktop) {
+        content: '';
+        position: absolute;
+        @include side-sizes(264px, 900px);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        background-image: url('../images/why-we/ul_bcg_@1x.jpg');
 
-          transform: translateX(-50%);
-          padding: 50px 1px;
+        @include mq(retina) {
+          background-image: url('../images/why-we/ul_bcg_@2x.jpg')
         }
-        @include mq(desktop) {
-        }
+
+        background-repeat: no-repeat;
+        background-size: cover;           
       }
     }
-    &:last-child {
-      margin-left: auto;
-      // height: 100%;
+  }
+}
+
+.why-we__titel { 
+  position: relative;
+  margin-bottom: 30px;
+
+  font-family: $font-serif;
+  font-size: 28px;
+  line-height: 1.6;
+  text-transform: capitalize;
+  color: $white-color; 
+
+  &::after {
+    bottom: -58px;
+    left: 0;
+    @extend %decor-left;
+
+    @include mq(mobile-only) {
+      @include side-sizes(0px, 0px);
     }
   }
-  &__titel {
-    z-index: 1;
-    // min-width: $min-width-var;
-    // display: inline-block;
-    margin-bottom: 32px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 1.2em;
-    text-align: center;
 
-    letter-spacing: 0.4px;
-    text-transform: capitalize;
-
-    color: $white-color;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    @include mq(tablet) {
-    }
-    @include mq(desktop) {
-      text-align: left;
-      font-size: 45px;
-      line-height: 1.2em;
-    }
+  @include mq(tablet-only) {
+    height: 90px;
   }
-  &__description {
-    z-index: 1;
 
+  @include mq(tablet) {
+    margin-bottom: 98px;    
+  }  
+
+  @include mq(desktop) {
+    font-size: 45px;
+    height: 144px;
+  }
+}
+
+.why-we__description {  
+  display: none;
+  color: $font-second-color;
+
+  @include mq(tablet) {
     display: block;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 32px;
-    /* or 160% */
-
-    letter-spacing: 0.4px;
-
-    color: $font-second-color;
   }
-  &__accent {
-    display: inline-block;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 26px;
-    /* or 130% */
 
-    letter-spacing: 0.4px;
-    text-transform: capitalize;
+  .why-we__item:nth-child(2) & {    
+    margin-bottom: 20px;
+  }
+}
 
-    color: $accent-color;
-    margin-top: 32px;
-    margin-bottom: 13px;
-    &:first-child {
-      margin-top: 0;
-    }
+.why-we__accent {
+  color: $accent-color;
+
+  @include mq(tablet) {
+    margin-bottom: 20px;
+  }
+
+  &:nth-child(2) {
+    @include mq(mobile-only) {
+      margin-bottom: 20px;
+    }        
+  }
+
+  &:nth-child(4) {
+    @include mq(tablet) {
+      margin-top: 20px;
+    }    
   }
 }
 
 .buch {
   &__list {
-    margin-top: auto;
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
   }
-  &__item {
-    padding-top: 55px;
-    display: flex;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.2em;
-    /* identical to box height, or 160% */
 
-      @include mq(tablet) {
-  }
-  @include mq(desktop) {
-    font-size: 16px;
-    line-height: 32px;
-  }
-    letter-spacing: 0.4px;
+  &__item {    
     position: relative;
+    display: flex;
+    font-size: 14px;
+    line-height: 1.6;
+    
+    margin-bottom: 40px;    
+
+    @include mq(tablet) {
+      font-size: 18px;
+    }
+    
     color: $white-color;
 
     &::after {
@@ -191,8 +153,8 @@
       top: calc(100% + 1px);
       width: 100%;
       height: 5px;
-      //   background-color: $accent-color;
     }
+
     &:nth-child(1)::after {
       background-image: linear-gradient(
         to right,
@@ -223,11 +185,8 @@
   }
 
   &__btn {
-    display: block;
-    width: 70%;
-    min-width: 250px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 15px 30px 5px;
+    text-align: center;
     @extend %yellov-btn;
 
     span {
@@ -235,13 +194,12 @@
     }
 
     @include mq(tablet) {
+      padding: 25px 71px 15px;
+
     }
     @include mq(desktop) {
       margin-left: 0;
       margin-right: auto;
-    }
-    margin-top: 65px;
-    padding: 15px 30px 5px;
-    text-align: center;
+    }    
   }
 }
