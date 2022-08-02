@@ -3,11 +3,6 @@
   padding-top: 100px;
   padding-bottom: 50px;
   
-
-  @include mq(mobile-only) {
-    background-color: $section-bg;
-  }
-
   @include mq(tablet) {
     padding-top: 150px;
     padding-bottom: 100px;
@@ -26,12 +21,20 @@
       top: -305px;
       z-index: -1;
   
-      background-image: linear-gradient(90deg, rgba(31, 39, 50, 0.81) 0%, rgba(31, 39, 50, 0.81) 100%),
-        url('../images/hero/hero-bg.webp'), url('../images/hero/hero-bg.jpg');
+      background-image: linear-gradient(90deg, rgba(31, 39, 50, 0.81) 0%, rgba(31, 39, 50, 0.81) 100%), 
+      url('../images/hero/hero-bg.jpg'); // ! костиль      
+      // url('../images/hero/hero-bg.webp'), url('../images/hero/hero-bg.jpg');
+      // background-image: image-set(linear-gradient(90deg, rgba(31, 39, 50, 0.81) 0%, rgba(31, 39, 50, 0.81) 100%),
+      //   url('../images/hero/hero-bg.webp') type('image/webp'),
+      //   url('../images/hero/hero-bg.jpg') type("image/jpeg"));
   
       @include mq(retina) {
         background-image: linear-gradient(90deg, rgba(31, 39, 50, 0.81) 0%, rgba(31, 39, 50, 0.81) 100%),
-          url('../images/hero/hero-bg@2x.webp'), url('../images/hero/hero-bg@2x.jpg');
+        url('../images/hero/hero-bg@2x.jpg'); // ! костиль        
+        // url('../images/hero/hero-bg@2x.webp'), url('../images/hero/hero-bg@2x.jpg');
+        // background-image: image-set(linear-gradient(90deg, rgba(31, 39, 50, 0.81) 0%, rgba(31, 39, 50, 0.81) 100%),
+        //   url('../images/hero/hero-bg@2x.webp') type('image/webp'),
+        //   url('../images/hero/hero-bg@2x.jpg') type("image/jpeg"));
       }
   
       background-repeat: no-repeat;

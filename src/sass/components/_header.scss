@@ -94,20 +94,18 @@
 }
 
 .h-contacts__item {
-  @include mq(tablet-only) {
+  @include mq(mobile-only) {
       margin-bottom: 10px;
     }
 } 
 
-.h-contacts__icon {
-  @include side-sizes(62px, 62px);
-  @include flex-center;
-  margin-right: 12px;
-  color: $icon-color;
-  border: 2px solid $accent-color;
-  border-radius: 50%;
+.h-contacts__icon {  
+  @include mq(mobile) {
+    @include side-sizes(62px, 62px);
+    border: 2px solid $accent-color;
+    border-radius: 50%;
+  }
 }
-
 
 .h-contacts__link {
   position: relative;

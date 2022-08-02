@@ -1,5 +1,7 @@
 .clients {
-  // padding: 130px 0;
+  @include mq(mobile-only) {
+    display: none;
+  }
 }
 
 .clients__title {
@@ -13,7 +15,7 @@
   }
 }
 
-.clienst__gallery {
+.clients__gallery {
   display: grid;
   max-width: 1360px;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));  
@@ -27,6 +29,12 @@
   position: relative;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+
+  &:nth-child(3) {
+    @include mq(tablet-only) {
+      display: none;
+    }
+  }
 }
 
 .gallery__image:hover {
@@ -37,7 +45,7 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transition: transform $time-function;
+  transition: transform $time-function;  
 }
 
 .gallery__link {
