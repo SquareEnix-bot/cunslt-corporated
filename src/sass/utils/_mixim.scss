@@ -38,9 +38,7 @@
   $mobile-start: 320px;
   $mobile: 480px;
   $tablet: 768px;
-  $desktop: 1440px;
-
-  // TODO допрацювати для мобілки 320 пікселів
+  $desktop: 1440px; // це брейк-поінт а не контейнер
 
   @if $screen==small-mobile {
     @media screen and (max-width: $mobile) {
@@ -83,21 +81,11 @@
 }
 
 // exemple using      @include bgimg('../images/advantages/s/icon_2', 'png');
-
 @mixin bgimg($filelink, $type) {
-  background-image: url($filelink + '.' + $type);
-  background-image: url($filelink + '.webp'); // !костиль
-
-  // ! якогось чорта на 1х не працює сет хоча на інших проектах працює
-  // background-image: -webkit-image-set(url($filelink + '.webp') 1x);
-  // background-image: image-set(url($filelink + '.webp') 1x);
-
-  // background-image: image-set(url($filelink + '.webp') type("image/webp") 1x, url($filelink + '@2x.webp') type("image/webp") 2x, url($filelink + '.' + $type) type("image/png") 1x, url($filelink + '@2x.' + $type) type("image/png") 2x);
-  // background-image: -webkit-image-set(url($filelink + '.webp') type("image/webp") 1x, url($filelink + '@2x.webp') type("image/webp") 2x, url($filelink + '.' + $type) type("image/png") 1x, url($filelink + '@2x.' + $type) type("image/png") 2x);
+  background-image: url($filelink + '.' + $type), url($filelink + '.webp');
 
   @include mq(retina) {
-    background-image: url($filelink + '@2x.' + $type);
-    background-image: -webkit-image-set(url($filelink + '@2x.webp') 2x);
-    background-image: image-set(url($filelink + '@2x.webp') 2x);
+    background-image: url($filelink + '@2x.' + $type), url($filelink + '@2x.webp');
   }
 }
+

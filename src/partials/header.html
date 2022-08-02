@@ -1,52 +1,121 @@
-<header class="header">
+<header class="header" id="header">
   <div class="container">
-    <div class="header__line">
-      <div class="logo"></div>
-      <!-- TODO логотип -->
-      <p class="logo__title">Cunslt Corporated</p>
-      <a href="#form" class="header__btn">Заказать консультацию</a>
-    </div>
-    <div class="header__line">
-      <nav class="header__nav nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a class="nav__link" href="#about">О нас</a>
+    <div class="header__menu">
+      <div class="header__line">
+        <a class="header__logo" href="#header">
+          <img class="logo" src="images/logo-footer.svg" alt="" />
+        </a>
+        <button
+          class="burger"
+          data-menu-button
+          type="button"
+          aria-label="button mobile menu"
+        >
+          <svg class="burger__icon">
+            <use
+              class="burger__icon-open"
+              href="./images/icons.svg#open-menu"
+            ></use>
+            <use
+              class="burger__icon-close"
+              href="./images/icons.svg#close-menu"
+            ></use>
+          </svg>
+        </button>
+        <a href="#form" class="header__btn">Заказать консультацию</a>
+      </div>
+      <div class="header__line">
+        <nav class="header__nav nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="#about">О нас</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#services">Услуги</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#reviews">Результаты</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#contacts">Связатся</a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="header__contacts h-contacts">
+          <li class="h-contacts__item">
+            <div class="h-contacts__icon">
+              <svg class="h-contacts__phone">
+                <use href="./images/icons.svg#phone"></use>
+              </svg>
+            </div>
+            <a href="tel:+48577037800" class="h-contacts__link">
+              <p class="h-contacts__subtitle">Позвоните нам:</p>
+              <p class="h-contacts__text">+48 577-037-800</p>
+            </a>
           </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#services">Услуги</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#">Результаты</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#contacts">Связатся</a>
+          <li class="h-contacts__item">
+            <div class="h-contacts__icon">
+              <svg class="h-contacts__mail">
+                <use href="./images/icons.svg#mail"></use>
+              </svg>
+            </div>
+            <a
+              href="mailto:consultcorporated@gmail.com"
+              class="h-contacts__link"
+            >
+              <p class="h-contacts__subtitle">Пишите нам на:</p>
+              <p class="h-contacts__text">consultcorporated@gmail.com</p>
+            </a>
           </li>
         </ul>
-      </nav>
-      <ul class="header__contacts h-contacts">
-        <li class="h-contacts__item">
-          <div class="h-contacts__icon">
-            <svg class="h-contacts__phone">
-              <use href="./images/icons.svg#phone"></use>
-            </svg>
-          </div>
-          <a href="tel:+48577037800" class="h-contacts__link">
-            <p class="h-contacts__subtitle">Позвоните нам:</p>
-            <p class="h-contacts__text">+48 577-037-800</p>
-          </a>
-        </li>
-        <li class="h-contacts__item">
-          <div class="h-contacts__icon">
-            <svg class="h-contacts__mail">
-              <use href="./images/icons.svg#mail"></use>
-            </svg>
-          </div>
-          <a href="mailto:consultcorporated@gmail.com" class="h-contacts__link">
-            <p class="h-contacts__subtitle">Пишите нам на:</p>
-            <p class="h-contacts__text">consultcorporated@gmail.com</p>
-          </a>
-        </li>
-      </ul>
+      </div>
+      <div class="mobile" data-menu>
+        <div class="container">
+          <nav class="header__nav nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a class="nav__link" href="#about">О нас</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#services">Услуги</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#reviews">Результаты</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#contacts">Связатся</a>
+              </li>
+            </ul>
+          </nav>
+          <ul class="header__contacts h-contacts">
+            <li class="h-contacts__item">
+              <div class="h-contacts__icon">
+                <svg class="h-contacts__phone">
+                  <use href="./images/icons.svg#phone"></use>
+                </svg>
+              </div>
+              <a href="tel:+48577037800" class="h-contacts__link">
+                <p class="h-contacts__subtitle">Позвоните нам:</p>
+                <p class="h-contacts__text">+48 577-037-800</p>
+              </a>
+            </li>
+            <li class="h-contacts__item">
+              <div class="h-contacts__icon">
+                <svg class="h-contacts__mail">
+                  <use href="./images/icons.svg#mail"></use>
+                </svg>
+              </div>
+              <a
+                href="mailto:consultcorporated@gmail.com"
+                class="h-contacts__link"
+              >
+                <p class="h-contacts__subtitle">Пишите нам на:</p>
+                <p class="h-contacts__text">consultcorporated@gmail.com</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </header>

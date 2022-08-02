@@ -1,14 +1,47 @@
 .hero {
-  padding-top: 186px;
-  padding-bottom: 170px;  
-}
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  
+  @include mq(tablet) {
+    padding-top: 150px;
+    padding-bottom: 100px;
+  }
 
-.hero__wrapper {
-  display: flex;  
-}
+  @include mq(desktop) {
+    padding-top: 186px;
+    padding-bottom: 170px;
+  }
 
-.hero__left {
-  flex-basis: 50%;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;      
+      height: 1023px;
+      top: -305px;
+      z-index: -1;
+  
+      background-image: linear-gradient(90deg, rgba(31, 39, 50, 0.81) 0%, rgba(31, 39, 50, 0.81) 100%), 
+      url('../images/hero/hero-bg.jpg'); // ! костиль      
+      // url('../images/hero/hero-bg.webp'), url('../images/hero/hero-bg.jpg');
+      // background-image: image-set(linear-gradient(90deg, rgba(31, 39, 50, 0.81) 0%, rgba(31, 39, 50, 0.81) 100%),
+      //   url('../images/hero/hero-bg.webp') type('image/webp'),
+      //   url('../images/hero/hero-bg.jpg') type("image/jpeg"));
+  
+      @include mq(retina) {
+        background-image: linear-gradient(90deg, rgba(31, 39, 50, 0.81) 0%, rgba(31, 39, 50, 0.81) 100%),
+        url('../images/hero/hero-bg@2x.jpg'); // ! костиль        
+        // url('../images/hero/hero-bg@2x.webp'), url('../images/hero/hero-bg@2x.jpg');
+        // background-image: image-set(linear-gradient(90deg, rgba(31, 39, 50, 0.81) 0%, rgba(31, 39, 50, 0.81) 100%),
+        //   url('../images/hero/hero-bg@2x.webp') type('image/webp'),
+        //   url('../images/hero/hero-bg@2x.jpg') type("image/jpeg"));
+      }
+  
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-color: $section-bg;      
+    }
 }
 
 .hero__title {
@@ -16,7 +49,7 @@
   margin-bottom: 21px;
   font-family: $font-serif;
   font-weight: 400;
-  font-size: 60px; // ? тут зменшила шрифт з 65px
+  font-size: 34px;
   line-height: 1.2;
   color: $white-color;
 
@@ -25,33 +58,85 @@
     left: 0;
     @extend %decor-left;
   }
+
+  @include mq(tablet) {
+    font-size: 44px;
+  }
+
+  @include mq(desktop) {
+    font-size: 60px;
+  }
 }
 
 .hero__desc {
   margin-bottom: 28px;
-  font-size: 22px;
+  font-size: 16px;
   line-height: 1.8;
   color: $accent-color;
+
+  @include mq(tablet) {
+    font-size: 18px;
+  }
+
+  @include mq(desktop) {
+    font-size: 22px;
+  }
 }
 
 .hero__btn {
   @extend %yellov-btn;
 
-  padding: 25px 71px 15px;   
+  padding: 25px 71px 15px;
 
   span {
     @extend %slide-in;
   }
-}
 
-.hero__right {
-  position: relative;
-  flex-basis: 50%;
+  @include mq(mobile-only) {
+    text-align: center;
+  }
+
+  @include mq(tablet) {
+    padding-left: 31px;
+    padding-right: 31px;
+  }
 }
 
 .hero__img {
-  position: absolute;
-  top: -173px;
-  right: 0;
-  @include side-sizes(700px, 700px);
+  display: none;
+}
+
+
+
+.hero__wrapper { 
+  @include mq(tablet) {
+    display: flex;
+  }  
+}
+
+.hero__left { 
+  @include mq(tablet) {
+    flex-basis: 50%;
+  }  
+}
+
+.hero__right { 
+  @include mq(tablet) {
+    position: relative;
+    flex-basis: 50%;
+  }  
+}
+
+.hero__img { 
+  @include mq(tablet) {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: calc(0% - 100px);
+  }    
+
+  @include mq(desktop) {  
+    bottom: calc(0% - 170px);
+    @include side-sizes(700px, 700px);
+  }
 }

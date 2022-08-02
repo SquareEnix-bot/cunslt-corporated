@@ -1,13 +1,55 @@
-<section class="about" id="about">
+<section class="about section" id="about">
   <div class="container">
     <div class="about__wrapper">
       <div class="about__left">
-        <img
-          class="about__img"
-          src="images/about-1.jpg"
-          alt="книги на полках"
-        />
-        <img class="about__img" src="images/about-2.jpg" alt="молоток судьи" />
+        <picture>
+          <source
+            srcset="
+              ./images/about/about-1.webp    1x,
+              ./images/about/about-1@2x.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            srcset="
+              ./images/about/about-1.jpg    1x,
+              ./images/about/about-1@2x.jpg 2x
+            "
+            type="image/jpeg"
+          />
+          <img
+            class="about__img"
+            src="./images/about/about-1.jpg"
+            width="305"
+            height="540"
+            data-about-1
+            alt="Елизавета Андреевна заключает сделку с клиентом"
+          />
+        </picture>
+        <picture>
+          <source
+            srcset="
+              ./images/about/about-2.webp    1x,
+              ./images/about/about-2@2x.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            srcset="
+              ./images/about/about-2.jpg    1x,
+              ./images/about/about-2@2x.jpg 2x
+            "
+            type="image/jpeg"
+          />
+          <img
+            class="about__img"
+            src="./images/about/about-2.jpg"
+            width="305"
+            height="540"
+            data-about-2
+            alt="Елизавета Андреевна заключает сделку с клиентом"
+          />
+        </picture>
       </div>
       <div class="about__right">
         <h2 class="about__title section-title">О нашей компании</h2>
@@ -17,11 +59,30 @@
           ведение бизнесов для иностранных компаний на польском рынке.
         </p>
         <div class="about__manager">
-          <img
-            class="about__manager-img"
-            src="images/hero-person.png"
-            alt="Елизавета Андреевна"
-          />
+          <picture>
+            <source
+              srcset="
+                ./images/about/about-icon.webp    1x,
+                ./images/about/about-icon@2x.webp 2x
+              "
+              type="image/webp"
+            />
+            <source
+              srcset="
+                ./images/about/about-icon.png    1x,
+                ./images/about/about-icon@2x.png 2x
+              "
+              type="image/png"
+            />
+            <img
+              class="about__manager-img"
+              src="./images/about/about-icon.png"
+              width="90"
+              height="90"
+              data-about-2
+              alt="Елизавета Андреевна"
+            />
+          </picture>
           <p class="about__manager-name">Елизавета Андреевна</p>
         </div>
         <ul class="about__list">

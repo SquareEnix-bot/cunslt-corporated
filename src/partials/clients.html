@@ -1,45 +1,64 @@
-<section class="clients">
-  <div class="contsiner">
+<section class="clients section">
+  <div class="container">
     <h2 class="clients__title section-title">Наши клиенты</h2>
-    <div class="clienst__gallery">
-      <a class="gallery__item" href="images/client-1.jpeg">
-        <img class="gallery__image" src="images/client-1.jpeg" />
+    <div class="clients__gallery">
+      <a class="gallery__item" href="images/clients/client-1.jpeg">
+        <picture>
+          <source
+            srcset="
+              ./images/clients/client-1.webp    1x,
+              ./images/clients/client-1@2x.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            srcset="
+              ./images/clients/client-1.jpeg    1x,
+              ./images/clients/client-1@2x.jpeg 2x
+            "
+            type="image/jpeg"
+          />
+          <img class="gallery__image" src="./images/clients/client-1.jpeg" />
+        </picture>
       </a>
-      <a class="gallery__item" href="images/client-2.jpeg">
-        <img class="gallery__image" src="images/client-2.jpeg" />
+      <a class="gallery__item" href="images/clients/client-2.jpeg">
+        <picture>
+          <source
+            srcset="
+              ./images/clients/client-2.webp    1x,
+              ./images/clients/client-2@2x.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            srcset="
+              ./images/clients/client-2.jpeg    1x,
+              ./images/clients/client-2@2x.jpeg 2x
+            "
+            type="image/jpeg"
+          />
+          <img class="gallery__image" src="./images/clients/client-2.jpeg" />
+        </picture>
       </a>
-      <a class="gallery__item" href="images/client-3.jpeg">
-        <img class="gallery__image" src="images/client-3.jpeg" />
+      <a class="gallery__item" href="images/clients/client-3.jpeg">
+        <picture>
+          <source
+            srcset="
+              ./images/clients/client-3.webp    1x,
+              ./images/clients/client-3@2x.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            srcset="
+              ./images/clients/client-3.jpeg    1x,
+              ./images/clients/client-3@2x.jpeg 2x
+            "
+            type="image/jpeg"
+          />
+          <img class="gallery__image" src="./images/clients/client-3.jpeg" />
+        </picture>
       </a>
     </div>
-    <!-- <ul class="clients__list">
-      <li class="clients__item">
-        <img
-          class="clients__img"
-          width="84"
-          height="84"
-          src="images/review-4.jpg"
-          alt="Татьяна"
-        />
-      </li>
-      <li class="clients__item">
-        <img
-          class="clients__img"
-          width="84"
-          height="84"
-          src="images/review-4.jpg"
-          alt="Татьяна"
-        />
-      </li>
-      <li class="clients__item">
-        <img
-          class="clients__img"
-          width="84"
-          height="84"
-          src="images/review-4.jpg"
-          alt="Татьяна"
-        />
-      </li>
-    </ul> -->
   </div>
 </section>
