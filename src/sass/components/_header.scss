@@ -101,7 +101,7 @@
 
 .h-contacts__icon {  
   @include mq(mobile) {
-    @include side-sizes(62px, 62px);
+    @include side-sizes(62px, 62px);    
     border: 2px solid $accent-color;
     border-radius: 50%;
   }
