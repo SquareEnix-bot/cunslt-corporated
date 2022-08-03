@@ -51,8 +51,7 @@
   }
   &__name {
     font-family: $font-serif;
-      font-size: 35px;
-
+    font-size: 35px;
 
     line-height: 1.6;
     text-align: center;
@@ -60,10 +59,11 @@
     margin-bottom: 16px;
     @include mq(tablet) {
       text-align: left;
-font-size: 40px;    }
+      font-size: 40px;
+    }
     @include mq(desktop) {
       text-align: left;
-  font-size: 45px;
+      font-size: 45px;
     }
   }
   &__description {
@@ -135,5 +135,17 @@ font-size: 40px;    }
 
     width: 100%;
     background-color: $header-line-border;
+  }
+}
+
+.VNZ {
+  &__item {
+    text-align: left;
+     transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: $time-function;
+    &:hover {
+      color: $accent-color;
+    }
   }
 }
