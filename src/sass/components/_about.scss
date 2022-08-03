@@ -18,6 +18,10 @@
       background-image: linear-gradient(90deg, rgba(31, 39, 50, 0.5) 0%, rgba(31, 39, 50, 0.5) 100%),
         url('../images/about/about-2-short@2x.jpg');
     }
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 
