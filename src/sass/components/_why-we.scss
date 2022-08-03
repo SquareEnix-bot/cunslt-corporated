@@ -5,6 +5,7 @@
   }
   background-size: cover;  
   background-repeat: no-repeat; 
+  
 }
 
 .why-we__list {  
@@ -25,6 +26,8 @@
 }
 
 .why-we__item {
+    display: flex;
+  flex-direction: column;
   &:nth-child(1) {
     @include mq(mobile-only) {
       margin-bottom: 30px;
@@ -126,10 +129,22 @@
 }
 
 .buch {
+
   &__list {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    margin-top: auto;
+      @include mq(tablet) {
+        margin-bottom: 0;
+
+
+    }
+    @include mq(desktop) {
+      // margin-left: 0;
+      // margin-right: auto;
+      
+    }   
   }
 
   &__item {    
@@ -200,6 +215,7 @@
     @include mq(desktop) {
       margin-left: 0;
       margin-right: auto;
+      
     }    
   }
 }

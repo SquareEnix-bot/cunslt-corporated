@@ -40,7 +40,7 @@ main {
 .container {
   padding: 0 15px;
   margin: 0 auto;
-  max-width: 320px;
+  // min-width: 320px;
 
   @include mq(mobile) {
     max-width: 480px;
