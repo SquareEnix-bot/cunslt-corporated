@@ -1,5 +1,24 @@
-.about {
+.about {  
   background-color: $section-bg;
+}
+
+.about__mobile-bg {  
+  background-image: linear-gradient(90deg, rgba(31, 39, 50, 0.5) 0%, rgba(31, 39, 50, 0.5) 100%);
+
+  @include mq(tablet) {
+    display: none;
+  }
+
+  .container {
+    height: 567px;
+    background-image: linear-gradient(90deg, rgba(31, 39, 50, 0.5) 0%, rgba(31, 39, 50, 0.5) 100%),
+      url('../images/about/about-2-short.jpg');
+
+    @include mq(retina) {
+      background-image: linear-gradient(90deg, rgba(31, 39, 50, 0.5) 0%, rgba(31, 39, 50, 0.5) 100%),
+        url('../images/about/about-2-short@2x.jpg');
+    }
+  }
 }
 
 .about__wrapper {
@@ -40,6 +59,10 @@
 }
 
 .about__right {
+  @include mq(mobile-only) {
+    margin-bottom: 50px;
+  }
+
   @include mq(tablet) {
     max-width: calc(100% - 355px);
   }
