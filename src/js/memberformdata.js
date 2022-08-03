@@ -53,7 +53,6 @@ function readLocal() {
 
 function sendData(e) {
   e.preventDefault();
-
   console.log('insidesenddata');
 
   if (!validator.isMobilePhone(dataToCrm.tel, ['uk-UA'])) {
@@ -89,7 +88,7 @@ function sendData(e) {
     console.log('send ', form_data);
     // refs.sucses.classList.toggle('active');
   }, 1500);
-  localStorage.clear();
+  // localStorage.clear("dataform");
   // if (readData) {
   //   // readData.email="asdas";
   //   data.name = readData.name;
@@ -104,6 +103,7 @@ function sendData(e) {
   // refs.formain.phone.value = data.phone;
   // refs.formain.email.value = data.email;
   // saveLocal();
+
   readLocal();
-  // saveLocal();
+  alert('Ваши данные успешно отправлены! Спасибо, с Вами скоро свяжутся');
 }

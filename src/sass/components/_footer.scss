@@ -1,12 +1,12 @@
-.footer {  
-  background-color: $section-bg;  
+.footer {
+  background-color: $section-bg;
   padding: 50px 0;
 
   &__container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
   }
 
   &__soclink-titel {
@@ -28,16 +28,18 @@
   }
   &__cops-soclink {
     @include flex-center;
-    flex-direction: column-reverse;    
-    position: relative;      
+    flex-direction: column-reverse;
+    position: relative;
+    padding-bottom: 15px;
 
     border-top: 1px solid $about-item-one-bg;
     border-bottom: 1px solid $about-item-one-bg;
 
-    @include mq(tablet) {      
+    @include mq(tablet) {
       display: flex;
       flex-direction: row;
-      align-items: baseline;            
+      align-items: baseline;
+      padding-bottom: 0px;
     }
     @include mq(desktop) {
     }
@@ -47,6 +49,7 @@
     font-family: $font-sans-serif;
     font-size: 20px;
     color: $font-second-color;
+    // border-bottom: 1px solid $about-item-one-bg;
 
     @include mq(mobile-only) {
       text-align: center;
@@ -60,7 +63,7 @@
   &__logo {
     position: relative;
 
-    @include mq(mobile) {  
+    @include mq(mobile) {
       &::after,
       &::before {
         content: '';
@@ -73,25 +76,25 @@
         }
       }
 
-      &::after {        
+      &::after {
         transform: translatey(50%);
         top: 0;
         left: 100%;
         background-image: url(../images/footer-icon-right-mini.svg);
 
-        @include mq(desktop) {          
+        @include mq(desktop) {
           transform: translatey(0);
           background-image: url(../images/footer-icon-right.svg);
         }
       }
 
-      &::before {        
+      &::before {
         transform: translatey(50%);
         top: 0;
         right: 100%;
         background-image: url(../images/footer-icon-left-mini.svg);
 
-        @include mq(desktop) {          
+        @include mq(desktop) {
           transform: translatey(0);
           background-image: url(../images/footer-icon-left.svg);
         }
@@ -128,15 +131,15 @@
 
   @include mq(tablet) {
     display: grid;
-    grid-template-columns: repeat(2, 360px);    
-    gap: 10px;    
+    grid-template-columns: repeat(2, 360px);
+    gap: 10px;
     justify-content: center;
   }
 
   @include mq(desktop) {
     grid-template-columns: repeat(4, 1fr);
   }
-}  
+}
 
 .footer__item {
   display: flex;
@@ -181,5 +184,5 @@
 .footer__text {
   font-size: 18px;
   line-height: 1.2;
-  color: $white-color;  
+  color: $white-color;
 }

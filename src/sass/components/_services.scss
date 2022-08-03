@@ -37,8 +37,12 @@
     width: calc((100% - 2 * 15px) / 1);
     position: relative;
     padding: 50px;
+    justify-content: center;
+    align-items: center;
 
     @include mq(tablet) {
+      justify-content: unset;
+      align-items: unset;
       width: calc((100% - 4 * 15px) / 2);
     }
     @include mq(desktop) {
@@ -47,20 +51,39 @@
   }
   &__name {
     font-family: $font-serif;
-    font-size: 35px;
-    line-height: 1.6;
+      font-size: 35px;
 
+
+    line-height: 1.6;
+    text-align: center;
     color: $white-color;
+    margin-bottom: 16px;
+    @include mq(tablet) {
+      text-align: left;
+font-size: 40px;    }
+    @include mq(desktop) {
+      text-align: left;
+  font-size: 45px;
+    }
   }
   &__description {
     position: relative;
 
     display: block;
     font-family: $font-sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.6;
+    text-align: center;
     color: $font-second-color;
     margin-bottom: 60px;
+    @include mq(tablet) {
+      text-align: left;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    @include mq(desktop) {
+      font-size: 20px;
+    }
   }
   &__btn {
     height: 58px;
@@ -68,10 +91,11 @@
     background: $section-bg;
     border-radius: 0px;
     margin-top: auto;
-    margin-left: auto;
+    // margin-left: auto;
+    // margin-right: auto;
     margin-bottom: 20px;
     font-family: $font-sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.6;
     text-transform: capitalize;
 
@@ -84,6 +108,12 @@
     transition-property: color, background-color;
     transition-duration: 250ms;
     transition-timing-function: $time-function;
+    @include mq(tablet) {
+      font-size: 18px;
+    }
+    @include mq(desktop) {
+      // font-size: 18px;
+    }
     &:hover,
     &:focus {
       background-color: $accent-color;
