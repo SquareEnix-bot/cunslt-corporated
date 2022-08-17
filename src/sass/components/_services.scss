@@ -1,151 +1,236 @@
 .services {
   padding-bottom: 150px;
   background-color: $dark-color;
+  color: $white-color;
+  transform: color $time-function;
+}
 
-  &__titel {
-    display: flex;
-    align-items: baseline;
-    padding-top: 31px;
-    padding-bottom: 150px;
+.services__titel {
+  display: flex;
+  align-items: baseline;
+  padding-top: 31px;
+  padding-bottom: 150px;
+  @include flex-center();
+  flex-direction: column;
+
+  @include mq(tablet) {
     @include flex-center();
-    flex-direction: column;
+  }
 
-    @include mq(tablet) {
-      @include flex-center();
-    }
-    @include mq(desktop) {
-      flex-direction: row;
-    }
-  }
-  &__head {
-    @extend %head-titel;
-  }
-  &__head_description {
-    @extend %head-description;
-  }
-  &__list {
-    width: 100%;
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  &__item {
-    background-color: $hero-btn-font;
-    display: flex;
-    flex-direction: column;
-    width: calc((100% - 2 * 15px) / 1);
-    position: relative;
-    padding: 50px;
-    justify-content: center;
-    align-items: center;
-
-    @include mq(tablet) {
-      justify-content: unset;
-      align-items: unset;
-      width: calc((100% - 4 * 15px) / 2);
-    }
-    @include mq(desktop) {
-      width: calc((100% - 6 * 15px) / 3);
-    }
-  }
-  &__name {
-    font-family: $font-serif;
-    font-size: 35px;
-
-    line-height: 1.6;
-    text-align: center;
-    color: $white-color;
-    margin-bottom: 16px;
-    @include mq(tablet) {
-      text-align: left;
-      font-size: 40px;
-    }
-    @include mq(desktop) {
-      text-align: left;
-      font-size: 45px;
-    }
-  }
-  &__description {
-    position: relative;
-
-    display: block;
-    font-family: $font-sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: center;
-    color: $font-second-color;
-    margin-bottom: 60px;
-    @include mq(tablet) {
-      text-align: left;
-      font-size: 18px;
-      line-height: 1.6;
-    }
-    @include mq(desktop) {
-      font-size: 20px;
-    }
-  }
-  &__btn {
-    height: 58px;
-    width: 187px;
-    background: $section-bg;
-    border-radius: 0px;
-    margin-top: auto;
-    // margin-left: auto;
-    // margin-right: auto;
-    margin-bottom: 20px;
-    font-family: $font-sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    text-transform: capitalize;
-
-    display: inline-block;
-    padding-top: 13px;
-    padding-bottom: 13px;
-    text-align: center;
-
-    color: $white-color;
-    transition-property: color, background-color;
-    transition-duration: 250ms;
-    transition-timing-function: $time-function;
-    @include mq(tablet) {
-      font-size: 18px;
-    }
-    @include mq(desktop) {
-      // font-size: 18px;
-    }
-    &:hover,
-    &:focus {
-      background-color: $accent-color;
-      color: $section-bg;
-    }
-  }
-  &__description::after {
-    // top: 60px;
-    bottom: -30px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    height: 1px;
-    display: block;
-    content: ' ';
-    position: absolute;
-    // top: 0px;
-    // left: 10%;
-
-    width: 100%;
-    background-color: $header-line-border;
+  @include mq(desktop) {
+    flex-direction: row;
   }
 }
+
+.services__head {
+  @extend %head-titel;
+}
+
+.services__head_description {
+  @extend %head-description;
+}
+
+.services__list {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.services__item {
+  background-color: $hero-btn-font;
+  display: flex;
+  flex-direction: column;
+  width: calc((100% - 2 * 15px) / 1);
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  @include mq(mobile-only) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @include mq(tablet) {
+    padding: 50px;
+    justify-content: unset;
+    align-items: unset;
+    width: calc((100% - 4 * 15px) / 2);
+  }
+
+  @include mq(desktop) {
+    width: calc((100% - 6 * 15px) / 3);
+  }
+}
+
+.services__name {
+  font-family: $font-serif;
+  font-size: 35px;
+  line-height: 1.6;
+  color: $white-color;
+
+  @include mq(mobile-only) {
+    max-width: 70%;
+    text-align: left;
+    margin-right: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  @include mq(tablet) {
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 40px;
+  }
+
+  @include mq(desktop) {
+    text-align: left;
+    font-size: 45px;
+  }
+}
+
+.services__description {
+  position: relative;
+
+  display: block;
+  font-family: $font-sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  color: $font-second-color;
+  margin-bottom: 60px;
+
+  @include mq(tablet) {
+    text-align: left;
+    font-size: 18px;
+  }
+
+  @include mq(desktop) {
+    font-size: 20px;
+  }
+}
+
+.services__btn {
+  height: 58px;
+  width: 187px;
+  background: $section-bg;
+  border-radius: 0px;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  font-family: $font-sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  text-transform: capitalize;
+
+  display: block;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  text-align: center;
+
+  color: $white-color;
+  transition: color $time-function, background-color $time-function;
+
+  @include mq(tablet) {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  @include mq(desktop) {
+    // font-size: 18px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    color: $section-bg;
+  }
+}
+
+.services__description::after {
+  bottom: -30px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 1px;
+  display: block;
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  background-color: $header-line-border;
+}
+
 
 .VNZ {
   &__item {
     text-align: left;
-     transition-property: color;
+    transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: $time-function;
+
     &:hover {
       color: $accent-color;
     }
+  }
+}
+
+.services__item {
+  @include mq(mobile-only) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    cursor: pointer;
+    transition: background-color $time-function;
+
+    &--active,
+    &:hover,
+    &:focus {
+      background-color: $services-active-item-bg;
+    }
+  }
+}
+
+.panel {
+  @include mq(mobile-only) {
+    flex-grow: 1;
+    display: none;
+    overflow: hidden;
+  }
+}
+
+.services__icon {
+  @include side-sizes(20px, 20px);
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  @include mq(tablet) {
+    display: none;
+  }
+}
+
+.services__icon-open {
+  visibility: visible;
+  opacity: 1;
+
+  .services__item.services__item--active & {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.services__icon-close {
+  .services__item.services__item--active & {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .services__item & {
+    visibility: hidden;
+    opacity: 0;
   }
 }
