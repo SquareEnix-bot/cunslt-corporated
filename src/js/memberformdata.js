@@ -9,7 +9,7 @@ const refs = {
 const dataToCrm = {};
 
 const send = document.querySelector('.form__btn');
-console.log('object', send);
+// console.log('object', send);
 send.addEventListener('click', sendData);
 
 const serviceBtns = document.querySelectorAll('.services__btn');
@@ -43,24 +43,29 @@ function saveLocal() {
 
 function readLocal() {
   const data = JSON.parse(localStorage.getItem('dataform'));
-  for (const key in data) {
-    if (Object.hasOwnProperty.call(data, key)) {
+  if (data) {
+    for (const key in data) {
       refs[key].value = data[key];
-      dataToCrm[key] = data[key];
+
+      if (Object.hasOwnProperty.call(data, key)) {
+        dataToCrm[key] = data[key];
+      }
+    }
+  } else {
+    for (const key in refs) {
+      if (Object.hasOwnProperty.call(refs, key)) {
+        refs[key].value = '';
+      }
     }
   }
 }
 
 function sendData(e) {
   e.preventDefault();
-  console.log('insidesenddata');
 
-  if (!validator.isMobilePhone(dataToCrm.tel, ['uk-UA'])) {
+  if (!validator.isMobilePhone(dataToCrm.tel, ['uk-UA', 'pl-PL', 'ru-RU'])) {
     alert('Not valid Phone');
-    console.log(
-      'Not valid Phone ',
-      validator.isMobilePhone(data.tel, ['uk-UA'])
-    );
+
     // refs.telAfter.classList.toggle('mymodal-form__box-tel-active');
     return;
   }
@@ -72,37 +77,14 @@ function sendData(e) {
 
   for (var key in dataToCrm) {
     form_data.append(key, dataToCrm[key]);
-
-    console.log(key, '---', dataToCrm[key]);
   }
-  // console.log(`Отправка данных ${form_data.values}`);
   const url = 'https://dev.uait.pro/concorp/tocrm.php';
 
   const request = new XMLHttpRequest();
   request.open('POST', url);
   request.send(form_data);
-  console.log(`request ${request}`);
-  // refs.sucses.classList.toggle('active');
-  setTimeout(() => {
-    // Will run last, after 2000 milliseconds
-    console.log('send ', form_data);
-    // refs.sucses.classList.toggle('active');
-  }, 1500);
-  // localStorage.clear("dataform");
-  // if (readData) {
-  //   // readData.email="asdas";
-  //   data.name = readData.name;
-  //   data.phone = readData.phone;
-  //   data.email = readData.email;
-  // } else {
-  //   data.name = '';
-  //   data.phone = '';
-  //   data.email = '';
-  // }
-  // refs.formain.name.value = data.name;
-  // refs.formain.phone.value = data.phone;
-  // refs.formain.email.value = data.email;
-  // saveLocal();
+  
+  localStorage.clear();
 
   readLocal();
   alert('Ваши данные успешно отправлены! Спасибо, с Вами скоро свяжутся');

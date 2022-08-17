@@ -3,7 +3,7 @@
 
   @include mq(mobile-only) {
     background-color: $section-bg;
-  }  
+  }
 }
 
 .header__line {
@@ -28,8 +28,8 @@
   }
 
   @include mq(mobile-only) {
-    position: absolute;    
-    left: 0;         
+    position: absolute;
+    left: 0;
     width: 100%;
     background-color: $section-bg;
     visibility: hidden;
@@ -50,7 +50,7 @@
 
       visibility: visible;
       opacity: 1;
-      pointer-events: initial;      
+      pointer-events: initial;
     }
   }
 
@@ -74,7 +74,7 @@
 .burger {
   margin-left: auto;
   color: $white-color;
-  transform: color $time-function;    
+  transform: color $time-function;
 
   @include mq(tablet) {
     display: none;
@@ -119,16 +119,16 @@
 .nav__list {
   @include mq(mobile-only) {
     margin-bottom: 50px;
-  }  
+  }
 }
 
 .nav__link {
-  font-size: 32px;  
+  font-size: 32px;
   line-height: 1.6;
   color: $white-color;
   transition: color $time-function;
 
-  display: inline-block; 
+  display: inline-block;
 
   &:hover,
   &:focus {
@@ -144,11 +144,11 @@
 }
 
 .h-contacts__phone {
-  @include side-sizes(17px, 17px)
+  @include side-sizes(17px, 17px);
 }
 
 .h-contacts__mail {
-  @include side-sizes(18px, 16px)
+  @include side-sizes(18px, 16px);
 }
 
 .h-contacts__item {
@@ -175,4 +175,13 @@
   @include mq(mobile) {
     font-size: 20px;
   }
+}
+.mobile .container {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.mob-soc {
+  margin-top: auto;
+  margin-bottom: 30px;
 }
