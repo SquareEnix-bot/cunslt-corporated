@@ -6,13 +6,13 @@
       padding-top: 20px;
       padding-bottom: 10px;
       margin-bottom: 10px;
-      
+
       @include mq(desktop) {
         padding-top: 30px;
         padding-bottom: 15px;
       }
     }
-    
+
     &:nth-child(2) {
       display: block;
       padding-bottom: 10px;
@@ -20,13 +20,13 @@
       border-bottom: 1px solid $header-line-border;
     }
   }
-    
-    @include mq(desktop) {
-      &:nth-child(2) {
-        display: flex;
-      }
+
+  @include mq(desktop) {
+    &:nth-child(2) {
+      display: flex;
     }
   }
+}
 
 .header__btn {
   @include mq(tablet) {
@@ -34,20 +34,20 @@
     font-size: 20px;
     line-height: 1.6;
     color: $white-color;
-      
+
     margin-left: auto;
     padding: 24px 71px;
-      
+
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: color $time-function, border-color $time-function;
-      
+
     &:hover,
     &:focus {
       color: $accent-color;
       border-color: $accent-color;
     }
-  }    
+  }
 
   @include mq(desktop) {
     font-size: 22px;
@@ -58,7 +58,7 @@
   @include mq(tablet) {
     display: flex;
     justify-content: space-around;
-  }    
+  }
 
   @include mq(desktop) {
     gap: 45px;
@@ -68,17 +68,17 @@
 .nav__link {
   @include mq(tablet) {
     font-size: 22px;
-      
-      display: inline-block;
-      
-      padding-top: 10px;
-      padding-bottom: 20px;
-  }    
+
+    display: inline-block;
+
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
 
   @include mq(desktop) {
     padding-top: 45px;
     padding-bottom: 48px;
-  }    
+  }
 }
 
 .h-contacts {
@@ -86,22 +86,23 @@
     display: flex;
     justify-content: space-around;
   }
-    
+
   @include mq(desktop) {
     margin-left: auto;
     gap: 50px;
-  }    
+  }
 }
 
 .h-contacts__item {
   @include mq(mobile-only) {
-      margin-bottom: 10px;
-    }
-} 
+    margin-bottom: 10px;
+  }
+ 
+}
 
-.h-contacts__icon {  
+.h-contacts__icon {
   @include mq(mobile) {
-    @include side-sizes(62px, 62px);    
+    @include side-sizes(62px, 62px);
     border: 2px solid $accent-color;
     border-radius: 50%;
   }

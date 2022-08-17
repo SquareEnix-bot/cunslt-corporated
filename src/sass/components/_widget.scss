@@ -1,0 +1,88 @@
+@import '//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css';
+// body {
+//   // background: url(http://lebenbau.ru/wp-content/uploads/photo-main.jpg) 100% 0%;
+//   font-family: 'BlissPro-Light', Helvetica, Arial, sans-serif;
+// }
+.widget {
+  //   margin: 5px;
+  //   background-color: azure;
+  list-style: none;
+  position: fixed;
+  bottom: 50;
+  right: 0px;
+  color: $reviews-desc-bg;
+  width: 20px;
+  z-index: 1000;
+  //    transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: $time-function;
+  &-active {
+    transform: translateX(-80px);
+    
+  }
+}
+
+.widget-soclink {
+  margin-right: 0;
+//   margin-top: 16px;
+//   margin-bottom: 16px;
+  //   position: fixed;
+  //   top: 100%;
+  //   right: -100;
+  //   @include flex-center();
+  &__item {
+  }
+  &__item:nth-child(1) {
+    transition-duration: 600ms;
+    transition-timing-function: $time-function;
+    transform: translateX(200);
+  }
+  &__item:nth-child(2) {
+    transition-duration: 450ms;
+    transition-timing-function: $time-function;
+    transform: translateX(200);
+   
+  
+  }
+  &__item:nth-child(3) {
+    transition-duration: 300ms;
+    transition-timing-function: $time-function;
+    transform: translateX(200);
+  }
+
+  &__item--active {
+    transform: translateX(0) !important;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__box {
+    @extend %sosial-box;
+    border: solid 2px $white-color;
+    background-color: $reviews-desc-bg;
+  }
+
+  &__icon {
+    @extend %sosial-icon;
+    fill: $white-color;
+  }
+}
+.call-socbox {
+  right: 50;
+  transform: translateX(0);
+  bottom: 50;
+  position: fixed;
+  background: $reviews-desc-bg;
+  background-image: url('../images/chat.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto;
+
+  transition-duration: 500ms;
+  transition-timing-function: $time-function;
+  &--off {
+    transform: translateX(550);
+  }
+}

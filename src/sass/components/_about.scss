@@ -1,9 +1,13 @@
-.about {  
+.about {
   background-color: $section-bg;
 }
 
-.about__mobile-bg {  
-  background-image: linear-gradient(90deg, rgba(31, 39, 50, 0.5) 0%, rgba(31, 39, 50, 0.5) 100%);
+.about__mobile-bg {
+  background-image: linear-gradient(
+    90deg,
+    rgba(31, 39, 50, 0.5) 0%,
+    rgba(31, 39, 50, 0.5) 100%
+  );
 
   @include mq(tablet) {
     display: none;
@@ -11,11 +15,19 @@
 
   .container {
     height: 567px;
-    background-image: linear-gradient(90deg, rgba(31, 39, 50, 0.5) 0%, rgba(31, 39, 50, 0.5) 100%),
+    background-image: linear-gradient(
+        90deg,
+        rgba(31, 39, 50, 0.5) 0%,
+        rgba(31, 39, 50, 0.5) 100%
+      ),
       url('../images/about/about-2-short.jpg');
 
     @include mq(retina) {
-      background-image: linear-gradient(90deg, rgba(31, 39, 50, 0.5) 0%, rgba(31, 39, 50, 0.5) 100%),
+      background-image: linear-gradient(
+          90deg,
+          rgba(31, 39, 50, 0.5) 0%,
+          rgba(31, 39, 50, 0.5) 100%
+        ),
         url('../images/about/about-2-short@2x.jpg');
     }
 
@@ -113,6 +125,23 @@
   font-size: 30px;
   line-height: 1.3;
   color: $white-color;
+  position: relative;
+  &::after {
+    display: block;
+    content: 'Владелец фирмы';
+
+    font-size: 18px;
+    line-height: 1.8;
+    color: $accent-color;
+
+    @include mq(tablet) {
+      font-size: 18px;
+    }
+
+    @include mq(desktop) {
+      font-size: 22px;
+    }
+  }
 
   @include mq(tablet) {
     font-size: 35px;
@@ -143,7 +172,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 15px 30px;  
+  padding: 15px 30px;
 
   @include mq(mobile-only) {
     width: 100%;
