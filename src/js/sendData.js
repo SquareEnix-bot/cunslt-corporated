@@ -1,5 +1,8 @@
+import sendToMail from './SendToMail';
+import SendToTelegramm from './SendToTelegramm';
+
 export default function sendData(dataToCrm) {
-//   e.preventDefault();
+  //   e.preventDefault();
   console.log('asdsadsa :>> ');
   if (!validator.isMobilePhone(dataToCrm.tel, ['uk-UA', 'pl-PL', 'ru-RU'])) {
     alert('Not valid Phone');
@@ -24,9 +27,11 @@ export default function sendData(dataToCrm) {
   const request = new XMLHttpRequest();
   request.open('POST', url);
   request.send(form_data);
+  sendToMail(dataToCrm);
+  SendToTelegramm(dataToCrm);
 
   localStorage.clear();
 
-//   readLocal();
+  //   readLocal();
   alert('Ваши данные успешно отправлены! Спасибо, с Вами скоро свяжутся');
 }
