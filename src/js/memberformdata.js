@@ -1,4 +1,5 @@
 // console.log('xsaxsa');
+import sendData from './sendData';
 
 const refs = {
   name: document.querySelector('#name'),
@@ -10,7 +11,7 @@ const dataToCrm = {};
 
 const send = document.querySelector('.form__btn');
 // console.log('object', send);
-send.addEventListener('click', sendData);
+send.addEventListener('click', sendDataf);
 
 const serviceBtns = document.querySelectorAll('.services__btn');
 //записываю данные в форму относительно нажатой кнопки
@@ -60,7 +61,7 @@ function readLocal() {
   }
 }
 
-function sendData(e) {
+function sendDataf(e) {
   e.preventDefault();
 
   if (!validator.isMobilePhone(dataToCrm.tel, ['uk-UA', 'pl-PL', 'ru-RU'])) {
@@ -73,19 +74,7 @@ function sendData(e) {
   dataToCrm.name_form = 'Консультация сайт';
   dataToCrm.titel = 'Консультация сайт';
 
-  let form_data = new FormData();
-
-  for (var key in dataToCrm) {
-    form_data.append(key, dataToCrm[key]);
-  }
-  const url = 'https://dev.uait.pro/concorp/tocrm.php';
-
-  const request = new XMLHttpRequest();
-  request.open('POST', url);
-  request.send(form_data);
-  
   localStorage.clear();
-
+  sendData(dataToCrm);
   readLocal();
-  alert('Ваши данные успешно отправлены! Спасибо, с Вами скоро свяжутся');
 }

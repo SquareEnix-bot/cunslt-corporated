@@ -10,14 +10,24 @@ const dataToCrm = {};
 
 const qa = [
   {
-    question: 'when was Javascript created',
-    correct: '1995',
-    incorrect: ['1984', '2000', '1996', '1994'],
+    question: 'Какой вид на жительство вы хотите получить?',
+    correct: "",
+    incorrect: [
+      'ВНЖ (karta czasowego pobytu) ',
+      'ПМЖ (stały pobyt)',
+      'Карта резидента (Karta Rezydenta Długoterminowego )',
+      'Гражданство (Obywatelstwo)',
+    ],
   },
   {
-    question: 'react was originally created by...',
-    correct: 'Jordan Walke',
-    incorrect: ['Kid Cudi', 'Almero Steyn', 'Jesse Beach', 'Caleb Meredith'],
+    question: 'На каком основании вы сейчас находитесь в Польше ?',
+    correct: 'Карта побыта',
+    incorrect: ['Карта побыта','Виза действующая', 'Виза продленная', 'Безвиз'],
+  },
+  {
+    question: 'В каком городе вы хотите подать документы?',
+    correct: 'Варшава',
+    incorrect: ['Варшава','Лодзь', 'Любой ответ'],
   },
 ];
 const openQwiz = document.querySelector('.js-header__btn');
@@ -52,12 +62,12 @@ function loadQuestions() {
       temp.push(obj);
     });
 
-    let obj = {
-      // place true on correct items
-      response: e.correct,
-      correct: true,
-    };
-    temp.push(obj);
+    // let obj = {
+    //   // place true on correct items
+    //   response: e.correct,
+    //   correct: true,
+    // };
+    // temp.push(obj);
     let mainTemp = {
       question: e.question,
       options: temp, // both correct and incorrect options are stored here
@@ -77,9 +87,9 @@ function newQuestion() {
   answerContainer.innerHTML = '';
   const el = questions[cur];
   progess();
-  el.options.sort(() => {
-    return 0.5 - Math.random();
-  });
+  // el.options.sort(() => {
+  //   return 0;
+  // });
 
   const capQuestion =
     el.question.charAt(0).toUpperCase() + el.question.slice(1);
