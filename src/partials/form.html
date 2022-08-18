@@ -1,11 +1,12 @@
 <section class="form" id="form">
-  <div class="container js-form-container ">
+  <div class="container js-form-container">
     <form class="form__list">
       <label for="name">Ваше имя</label>
       <input
         class="form__input"
         name="name"
         id="name"
+        autocomplete="on"
         placeholder="Ваше имя *"
         required
       />
@@ -17,8 +18,8 @@
         type="tel"
         name="phone_number"
         id="tel"
-        placeholder="Ваш телефон *"
-          
+        autocomplete="on"
+        placeholder="Ваш телефон ['UA'/ 'PL' /'RU']"
       />
 
       <label for="service">Услуга</label>
@@ -27,7 +28,6 @@
         id="service"
         name="service_name"
         placeholder="Ваш телефон"
-        
       >
         <option class="form__option" value="---">Выберете направление</option>
         <option class="form__option" value="ВНЖ (karta czasowego pobytu)">

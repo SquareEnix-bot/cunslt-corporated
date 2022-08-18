@@ -173,7 +173,7 @@ function progess() {
   question.style.display = 'block';
 
   const currentQ = cur + 1;
-  const progressIs = (currentQ / questions.length) * 100;
+  const progressIs = ((currentQ-1) / (questions.length)) * 100;
 
   if (progressIs === 100) {
     next.innerHTML = '';
@@ -186,7 +186,10 @@ startBtn.addEventListener('click', newQuestion);
 qwiz.addEventListener('click', e => {
   e.preventDefault();
 
-  if ([...e.target.classList][0] === 'qwiz') {
+  if (
+    [...e.target.classList][0] === 'modal-container__icon' ||
+    [...e.target.classList][0] === 'modal-container__closed'
+  ) {
     qwiz.classList.toggle('visually-hidden');
     restartGame();
   }
@@ -210,6 +213,7 @@ next.addEventListener('click', afterAnsver);
 // update score while answering each Q
 
 function results() {
+  progess();
   // console.log(player.score);
   // console.log('Result');
   // console.table(player.answers);
@@ -223,6 +227,7 @@ function results() {
         class="quiz-form__input"
         name="name"
         id="quiz-name"
+        autocomplete="on"
         placeholder="Ваше имя *"
         required
       />
@@ -232,10 +237,11 @@ function results() {
       <input
         class="quiz-form__input"
         type="tel"
+        
+        autocomplete="on"
         name="phone_number"
         id="quiz-tel"
-        placeholder="Ваш телефон *"
-          
+        placeholder="Ваш телефон ['UA'/ 'PL' /'RU']"
       />
       <button class="quiz-form__btn" type="submit">Заказать консультацию</button>
     </form>`;
@@ -348,5 +354,4 @@ function closeQwiz() {
 
     restartGame();
   }, 3500);
-
 }

@@ -7,9 +7,10 @@
   justify-content: center;
   height: 100vh;
   width: 100% !important;
-
+  z-index: 999999;
   background-color: rgba(33, 33, 33, 0.9);
   font-family: monospace;
+
   // margin: 0;
 }
 .form-c {
@@ -254,6 +255,45 @@
     }
   }
 }
+
+.modal-container__closed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 8px;
+  right: 8px;
+  border-radius: 50%;
+  border: solid 1px  $white-color;
+  background-color: transparent;
+   transition-property: fill border ;
+  transition-duration: $time;
+  transition-timing-function: $time-function;
+  &:hover{
+  border: solid 1px  $accent-color;
+
+  }
+ 
+}
+.modal-container__icon {
+  width: 18px;
+  height: 18px;
+
+  fill: $white-color;
+  transition-property: fill ;
+  transition-duration: $time;
+  transition-timing-function: $time-function;
+}
+
+.modal-container__closed:hover .modal-container__icon,
+.modal-container__closed:focus .modal-container__icon {
+  fill: $accent-color;
+
+}
+
 
 label {
   visibility: hidden;

@@ -37,8 +37,8 @@
     };
     updateProgress();
     $(window).scroll(updateProgress);
-    var offset = 50;
-    var duration = 550;
+    var offset = 150;
+    var duration = 150;
     jQuery(window).on('scroll', function () {
       if (jQuery(this).scrollTop() > offset) {
         jQuery('.progress-wrap').addClass('active-progress');
