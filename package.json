@@ -21,6 +21,7 @@
   "dependencies": {
     "ajax": "0.0.4",
     "axios": "^0.27.2",
+    "libphonenumber-js": "^1.10.12",
     "modern-normalize": "^1.1.0",
     "simplelightbox": "^2.10.3",
     "swiper": "^8.3.2"

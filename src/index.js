@@ -6,4 +6,4 @@ import './js/swiper';
 import './js/memberformdata';
 import './js/widjet';
 import './js/qwiz';
-
+import './js/scroll';

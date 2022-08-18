@@ -11,7 +11,7 @@ const dataToCrm = {};
 const qa = [
   {
     question: 'Какой вид на жительство вы хотите получить?',
-    correct: "",
+    correct: '',
     incorrect: [
       'ВНЖ (karta czasowego pobytu) ',
       'ПМЖ (stały pobyt)',
@@ -22,16 +22,23 @@ const qa = [
   {
     question: 'На каком основании вы сейчас находитесь в Польше ?',
     correct: 'Карта побыта',
-    incorrect: ['Карта побыта','Виза действующая', 'Виза продленная', 'Безвиз'],
+    incorrect: [
+      'Карта побыта',
+      'Виза действующая',
+      'Виза продленная',
+      'Безвиз',
+    ],
   },
   {
     question: 'В каком городе вы хотите подать документы?',
     correct: 'Варшава',
-    incorrect: ['Варшава','Лодзь', 'Любой ответ'],
+    incorrect: ['Варшава', 'Лодзь', 'Любой ответ'],
   },
 ];
-const openQwiz = document.querySelector('.js-header__btn');
+const openQwiz = document.querySelectorAll('.js-qwiz-open');
 const qwiz = document.querySelector('.qwiz');
+const qContainer = document.querySelector('.form-c');
+
 const answerContainer = document.querySelector('.a');
 const questionCon = document.querySelector('.q');
 const question = document.querySelector('.q-item');
@@ -178,20 +185,25 @@ function progess() {
 startBtn.addEventListener('click', newQuestion);
 qwiz.addEventListener('click', e => {
   e.preventDefault();
-  console.log('qwiz');
 
   if ([...e.target.classList][0] === 'qwiz') {
     qwiz.classList.toggle('visually-hidden');
     restartGame();
   }
 });
-
-openQwiz.addEventListener('click', e => {
-  e.preventDefault();
-  qwiz.classList.toggle('visually-hidden');
-  console.log('open :>> ');
-  newQuestion();
+openQwiz.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    qwiz.classList.toggle('visually-hidden');
+    newQuestion();
+  });
 });
+// openQwiz.addEventListener('click', e => {
+//   e.preventDefault();
+//   qwiz.classList.toggle('visually-hidden');
+//   console.log('open :>> ');
+//   newQuestion();
+// });
 
 next.addEventListener('click', afterAnsver);
 
@@ -258,6 +270,9 @@ function results() {
 }
 function restartGame() {
   // console.log('reset');
+  player.score = 0;
+  player.answers = [];
+
   cur = 0;
   questions.length = 0;
   loadQuestions();
@@ -280,10 +295,8 @@ function saveLocal() {
   };
 
   player.answers.map(item => {
-    data.comment += `${item.que} : ${item.res} <br>`;
+    data[item.que] = item.res;
   });
-
-  console.log(data);
   localStorage.setItem('quizdataform', JSON.stringify(data));
   readLocal();
 }
@@ -296,8 +309,12 @@ function readLocal() {
 
       if (Object.hasOwnProperty.call(data, key)) {
         dataToCrm[key] = data[key];
+        if (key === 'tel') {
+          dataToCrm.telegramm = `<a href="https://t.me/${data[key]}">${data[key]}</a>`;
+        }
       }
     }
+    dataToCrm.name_form = 'QWIZ';
   } else {
     for (const key in refs) {
       if (Object.hasOwnProperty.call(refs, key)) {
@@ -307,7 +324,29 @@ function readLocal() {
   }
 }
 
-function prepereToSend(e) {
+async function prepereToSend(e) {
   e.preventDefault();
-  sendData(dataToCrm);
+  const resp = await sendData(dataToCrm);
+  if (resp === 'no valid') {
+    return;
+  }
+  closeQwiz();
+}
+
+function closeQwiz() {
+  question.style.display = 'block';
+  question.style.color = '#1f2732';
+
+  answerContainer.innerHTML = '';
+  question.textContent = `Спасибо с вами скоро свяжутся`;
+  qContainer.style.backgroundColor = `#d1b06b`;
+  // const resultsMockup = `<div>Спасибо с вами скоро свяжутся</div>`;
+  setTimeout(() => {
+    qwiz.classList.toggle('visually-hidden');
+    qContainer.style.backgroundColor = `#1c1c23`;
+    question.style.color = '#fff';
+
+    restartGame();
+  }, 3500);
+
 }
