@@ -35,8 +35,6 @@
   }
   &__option {
     color: $hero-btn-font;
-    
-   
   }
   &__input {
     margin-left: auto;
@@ -130,6 +128,33 @@
     &:focus {
       background-color: $accent-color;
     }
+  }
+}
+
+.form {
+  &__sucsess {
+    // height: 678.562px;
+    &-text {
+      margin: auto;
+      color: $hero-btn-font;
+    }
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $accent-color;
+    // min-width: 300px;
+    padding: 30px 10px;
+
+    @include mq(tablet) {
+      padding: 50px 50px;
+
+      // width: 720px;
+    }
+    @include mq(desktop) {
+      width: 900px;
+      padding: 100px 50px;
+    }
+    display: flex;
+    flex-direction: column;
   }
 }
 

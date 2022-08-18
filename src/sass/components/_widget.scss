@@ -18,14 +18,13 @@
   transition-timing-function: $time-function;
   &-active {
     transform: translateX(-80px);
-    
   }
 }
 
 .widget-soclink {
   margin-right: 0;
-//   margin-top: 16px;
-//   margin-bottom: 16px;
+  //   margin-top: 16px;
+  //   margin-bottom: 16px;
   //   position: fixed;
   //   top: 100%;
   //   right: -100;
@@ -41,8 +40,6 @@
     transition-duration: 450ms;
     transition-timing-function: $time-function;
     transform: translateX(200);
-   
-  
   }
   &__item:nth-child(3) {
     transition-duration: 300ms;
@@ -70,6 +67,7 @@
   }
 }
 .call-socbox {
+  z-index: 999999;
   right: 50;
   transform: translateX(0);
   bottom: 50;

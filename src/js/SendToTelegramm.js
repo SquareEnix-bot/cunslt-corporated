@@ -7,12 +7,11 @@ export default async function sendToTelegramm(data) {
 
   for (const key in data) {
     if (Object.hasOwnProperty.call(data, key)) {
-      str += `${key}:  ${data[key]}
-       `;
+      str += `${key}: <b> ${data[key]}</b> \n`;
     }
   }
 
   const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-  const params = { chat_id: CHAT_ID, text: str };
+  const params = { chat_id: CHAT_ID, text: str, parse_mode: 'HTML' };
   await axios.get(url, { params: params });
 }
