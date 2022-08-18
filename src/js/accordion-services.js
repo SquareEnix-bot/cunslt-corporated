@@ -1,20 +1,23 @@
-let acc = document.getElementsByClassName("services__item");
+let acc = document.getElementsByClassName("accordion");
 const mediaQuery = window.matchMedia('(max-width: 768px)')
 
 if (mediaQuery.matches) {
   for (let i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function () {
-      this.classList.toggle("services__item--active");
+      this.classList.toggle("accordion--active");
 
-      let panel = this.lastElementChild;
+      let panel = this.nextElementSibling;
 
-      if (panel.style.display === "block") {
-        // panel.style.display = "none";
-        fadeOut(panel)
-      } else {
-        // panel.style.display = "block";
-        fadeIn(panel)
-      }
+      panel.classList.toggle("hidden");
+      panel.classList.toggle("active");
+
+      // if (panel.style.display === "block") {
+      //   panel.style.display = "none";
+      //   // fadeOut(panel)
+      // } else {
+      //   panel.style.display = "block";
+      //   // fadeIn(panel)
+      // }
     });
   }
 }

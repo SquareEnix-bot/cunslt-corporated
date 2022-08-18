@@ -39,7 +39,7 @@
 }
 
 .services__item {
-  background-color: $hero-btn-font;
+  // background-color: $hero-btn-font;
   display: flex;
   flex-direction: column;
   width: calc((100% - 2 * 15px) / 1);
@@ -48,8 +48,8 @@
   align-items: center;
 
   @include mq(mobile-only) {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   @include mq(tablet) {
@@ -69,6 +69,7 @@
   font-size: 35px;
   line-height: 1.6;
   color: $white-color;
+  transition: color $time-function;
 
   @include mq(mobile-only) {
     max-width: 70%;
@@ -101,6 +102,11 @@
   text-align: center;
   color: $font-second-color;
   margin-bottom: 60px;
+
+  @include mq(mobile-only) {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
 
   @include mq(tablet) {
     text-align: left;
@@ -161,6 +167,10 @@
   position: absolute;
   width: 100%;
   background-color: $header-line-border;
+
+  @include mq(mobile-only) {
+    width: calc(100% - 100px);
+  }
 }
 
 .VNZ {
@@ -176,18 +186,26 @@
   }
 }
 
-.services__item {
+.accordion {
   @include mq(mobile-only) {
+    padding-right: 50px;
+    padding-left: 50px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     cursor: pointer;
+    background-color: $hero-btn-font;
     transition: background-color $time-function;
 
-    &--active,
     &:hover,
     &:focus {
-      background-color: $services-active-item-bg;
+
+      .services__icon,
+      .services__name {
+        color: $accent-color;
+      }
     }
   }
 }
@@ -195,13 +213,32 @@
 .panel {
   @include mq(mobile-only) {
     flex-grow: 1;
-    display: none;
-    overflow: hidden;
+    // display: none;
+    background-color: $hero-btn-font;
+
+    &.hidden {
+      visibility: hidden;
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all $time-function;
+    }
+
+    &.active {
+      visibility: visible;
+      height: auto;
+      overflow: auto;
+      opacity: 1;
+    }
   }
 }
 
+
+
 .services__icon {
   @include side-sizes(20px, 20px);
+  color: $white-color;
+  transition: color $time-function;
 
   &:hover,
   &:focus {
@@ -217,19 +254,19 @@
   visibility: visible;
   opacity: 1;
 
-  .services__item.services__item--active & {
+  .accordion.accordion--active & {
     visibility: hidden;
     opacity: 0;
   }
 }
 
 .services__icon-close {
-  .services__item.services__item--active & {
+  .accordion.accordion--active & {
     visibility: visible;
     opacity: 1;
   }
 
-  .services__item & {
+  .accordion & {
     visibility: hidden;
     opacity: 0;
   }
