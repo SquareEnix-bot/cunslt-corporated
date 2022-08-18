@@ -173,7 +173,8 @@ function progess() {
   question.style.display = 'block';
 
   const currentQ = cur + 1;
-  const progressIs = ((currentQ-1) / (questions.length)) * 100;
+  const progressIs = ((currentQ - 1) / questions.length) * 100;
+  next.innerHTML = `${currentQ} / ${questions.length}`;
 
   if (progressIs === 100) {
     next.innerHTML = '';
@@ -191,6 +192,7 @@ qwiz.addEventListener('click', e => {
     [...e.target.classList][0] === 'modal-container__closed'
   ) {
     qwiz.classList.toggle('visually-hidden');
+    window.removeEventListener('beforeunload', noreturn);
     restartGame();
   }
 });
@@ -198,6 +200,7 @@ openQwiz.forEach(item => {
   item.addEventListener('click', e => {
     e.preventDefault();
     qwiz.classList.toggle('visually-hidden');
+    window.addEventListener('beforeunload', noreturn);
     newQuestion();
   });
 });
@@ -354,4 +357,10 @@ function closeQwiz() {
 
     restartGame();
   }, 3500);
+}
+function noreturn(event) {
+  // Отмените событие, как указано в стандарте.
+  event.preventDefault();
+  // Chrome требует установки возвратного значения.
+  event.returnValue = '';
 }

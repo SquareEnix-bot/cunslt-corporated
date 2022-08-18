@@ -138,18 +138,21 @@
   }
 
   &__list {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 20px;
+    margin-right: 20px;
     // background-color: $hero-btn-font;
     // min-width: 300px;
     // padding: 30px 10px;
 
     @include mq(tablet) {
       //   padding: 50px 50px;
-
+margin-left: 40px;
+    margin-right: 40px;
       // width: 720px;
     }
     @include mq(desktop) {
+      margin-left: auto;
+    margin-right: auto;
       //   width: 900px;
       //   padding: 100px 50px;
     }
